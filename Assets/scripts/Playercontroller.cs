@@ -38,7 +38,7 @@ public class Playercontroller : MonoBehaviour
     {
 
 
-
+        anim.SetBool("jump", false);
 
         if (Input.GetKey("v"))
         {
@@ -56,14 +56,7 @@ public class Playercontroller : MonoBehaviour
 
         isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
 
-        if (!isgrounded)
-        {
-            anim.SetBool("grounded", false);
-        }
-        if (isgrounded)
-        {
-            anim.SetBool("grounded", true);
-        }
+
 
 
 
@@ -107,10 +100,18 @@ public class Playercontroller : MonoBehaviour
 
         if (Input.GetKey("space") && isgrounded)
         {
+            anim.SetBool("jump", true);
             velocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }
 
-
+        if (!isgrounded)
+        {
+            anim.SetBool("grounded", false);
+        }
+        if (isgrounded)
+        {
+            anim.SetBool("grounded", true);
+        }
 
 
         anim.SetBool("walking", false);
