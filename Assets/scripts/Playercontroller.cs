@@ -14,6 +14,7 @@ public class Playercontroller : MonoBehaviour
     public static int playerscore = 0;
 
     GameObject coin;
+    GameObject ground;
 
     public float gravity = -9.81f;
     public float jumpheight = 5f;
@@ -22,12 +23,13 @@ public class Playercontroller : MonoBehaviour
     public float grounddistance = 0.4f;
     public LayerMask groundmask;
 
-    bool isgrounded;
+    public bool isgrounded;
     Vector3 velocity;
     public Animator anim;
 
     void start()
     {
+        ground = GameObject.FindGameObjectWithTag("ground");
         coin = GameObject.FindGameObjectWithTag("Coin");
         anim.SetBool("weapondrawn", false);
         //anim = GetComponent<Animator>();
@@ -54,7 +56,7 @@ public class Playercontroller : MonoBehaviour
 
         anim.SetBool("grounded", false);
 
-        isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
+        //isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
 
 
 
@@ -88,7 +90,7 @@ public class Playercontroller : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            print("ooo");
+            
             Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;
             controller.Move(movedir.normalized * speed * Time.deltaTime);
         }
@@ -100,7 +102,7 @@ public class Playercontroller : MonoBehaviour
 
         if (Input.GetKey("space") && isgrounded)
         {
-            anim.SetBool("jump", true);
+            //anim.SetBool("jump", true);
             velocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }
 
@@ -119,7 +121,7 @@ public class Playercontroller : MonoBehaviour
 
 
 
-        if ((GetComponent<Rigidbody>().velocity.magnitude > 0.5) && isgrounded)
+        if ((GetComponent<Rigidbody>().velocity.magnitude > 0.1) && isgrounded)
         {
             anim.SetBool("walking", true);
 
@@ -143,19 +145,36 @@ public class Playercontroller : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        print("ontrigger=" + other.gameObject.tag);
+
         if (other.gameObject == coin)
         {
             playerscore = playerscore + 420;
         }
+
+        if (other.gameObject.tag == "ground")
+        {
+            isgrounded = true;
+        }
+        else
+        {
+            isgrounded = false;
+        }
+
     }
 
 
 
-
-
-    void OnCollisionEnter()
+    void OnTriggerExit(Collider other)
     {
-
+        if (other.gameObject.tag == "ground")
+        {
+            isgrounded = false;
+        }
+        else
+        {
+            isgrounded = true;
+        }
     }
 
     void FixedUpdate()
