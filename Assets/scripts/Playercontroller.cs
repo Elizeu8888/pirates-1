@@ -38,17 +38,17 @@ public class Playercontroller : MonoBehaviour
 
     void Update()
     {
-
+        anim.SetLayerWeight(1, 0);
 
         anim.SetBool("jump", false);
 
-        if (Input.GetKey("v"))
+        if (Input.GetMouseButton(0))
         {
-            anim.SetBool("weapondrawn", true);
+            anim.SetLayerWeight(1, 1);
         }
-        if (Input.GetKey("c"))
+        else
         {
-            anim.SetBool("weapondrawn", false);
+            anim.SetLayerWeight(1, 0);
         }
 
 
