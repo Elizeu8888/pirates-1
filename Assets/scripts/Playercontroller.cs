@@ -14,7 +14,7 @@ public class Playercontroller : MonoBehaviour
     public int maxHealth = 100;// health
     public int currentHealth;
 
-
+    private int damageTimer;
 
     public static int playerscore = 0;
 
@@ -27,20 +27,23 @@ public class Playercontroller : MonoBehaviour
     public Transform groundcheck;
     public float grounddistance = 0.4f;// for is grounded
     public LayerMask groundmask;
+    public Collider groundedcheck;
+
+
 
     public bool isgrounded;
     Vector3 velocity;
 
     public Animator anim;
 
-    void start()
+    void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         ground = GameObject.FindGameObjectWithTag("ground");
         coin = GameObject.FindGameObjectWithTag("Coin");
         anim.SetBool("weapondrawn", false);
-
+        damageTimer = 10;
     }
 
     void TakeDamage(int damage)
@@ -156,7 +159,7 @@ public class Playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
-        isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
+        //isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
     }
 
 
@@ -166,34 +169,52 @@ public class Playercontroller : MonoBehaviour
     {
         print("ontrigger=" + other.gameObject.tag);
 
-        if (other.gameObject == coin)
-        {
-            playerscore = playerscore + 420;
-        }
 
         
         if (other.gameObject.tag == "enemy")
         {
-            TakeDamage(5);
-        }
-        
+            if (damageTimer < 0)
+            {
+                TakeDamage(5);
+                damageTimer = 10;
+            }
+            else
+            {
+                damageTimer--;
+            }
 
+        }
+
+        if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
+        {
+            isgrounded = true;
+        }
+
+
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
 
 
     }
 
 
 
+
+
+
+
     void OnTriggerExit(Collider other)
     {
-        /*if (other.gameObject.tag == "ground")
+
+
+        if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             isgrounded = false;
         }
-        else
-        {
-            isgrounded = true;
-        }*/
+
+
     }
 
 }
