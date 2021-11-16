@@ -57,7 +57,6 @@ public class Playercontroller : MonoBehaviour
 
     void Update()
     {
-        
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");// uses imput to find direction
@@ -76,8 +75,8 @@ public class Playercontroller : MonoBehaviour
 
 
             float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;// finds direction of movement
-            
-            
+
+
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);// makes it so the player faces its movement direction
             transform.rotation = Quaternion.Euler(0f, angle, 0f);// makes it so the player faces its movement direction
 
@@ -89,6 +88,35 @@ public class Playercontroller : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
+
+        anim.SetBool("walking", false);
+        if ((GetComponent<Rigidbody>().velocity.magnitude > 0.1) && isgrounded)
+        {
+            anim.SetBool("walking", true);
+
+        }
+        else
+        {
+            anim.SetBool("walking", false);
+        }
+
+
+
+        if (isgrounded && velocity.y < 0)
+        {
+            velocity.y = -13f;
+        }
+
+
+
+
+
+
+        if (Input.GetKey("space") && isgrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);// here u jump
+        }
+
 
 
         anim.SetLayerWeight(1, 0);
@@ -115,20 +143,6 @@ public class Playercontroller : MonoBehaviour
         anim.SetBool("grounded", false);
 
 
-        if (isgrounded && velocity.y < 0)
-        {
-            velocity.y = -13f;
-        }
-
-
-
-
-
-
-        if (Input.GetKey("space") && isgrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
-        }
 
         if (!isgrounded)
         {
@@ -140,18 +154,6 @@ public class Playercontroller : MonoBehaviour
         }
 
 
-        anim.SetBool("walking", false);
-
-        if ((GetComponent<Rigidbody>().velocity.magnitude > 0.1) && isgrounded)
-        {
-            anim.SetBool("walking", true);
-
-        }
-        else
-        {
-            anim.SetBool("walking", false);
-        }
-
 
 
 
@@ -159,7 +161,11 @@ public class Playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
-        //isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
+        isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
+
+
+
+
     }
 
 
@@ -185,10 +191,14 @@ public class Playercontroller : MonoBehaviour
 
         }
 
-        if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
+        /*if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             isgrounded = true;
         }
+        else
+        {
+            isgrounded = false;
+        }*/
 
 
     }
@@ -209,10 +219,14 @@ public class Playercontroller : MonoBehaviour
     {
 
 
-        if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
+        /*if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             isgrounded = false;
         }
+        else
+        {
+            isgrounded = true;
+        }*/
 
 
     }

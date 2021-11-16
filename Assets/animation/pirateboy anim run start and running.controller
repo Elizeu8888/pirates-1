@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2377097981430676111, guid: 59f1a810c1c3bcb41b8423bf6e4e4582, type: 3}
+  m_Motion: {fileID: 1472749881304621239, guid: 59f1a810c1c3bcb41b8423bf6e4e4582, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: walking
@@ -91,7 +91,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Armature|running_002
-  m_Speed: 4
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8540856319980459201}
@@ -104,7 +104,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 5269128506079621549, guid: 59f1a810c1c3bcb41b8423bf6e4e4582, type: 3}
+  m_Motion: {fileID: -2377097981430676111, guid: 59f1a810c1c3bcb41b8423bf6e4e4582, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -327,7 +327,7 @@ AnimatorStateMachine:
     m_Position: {x: 40, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -693489218271599957}
-    m_Position: {x: -100, y: 270, z: 0}
+    m_Position: {x: -110, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3487319340168976557}
     m_Position: {x: 240, y: 270, z: 0}
