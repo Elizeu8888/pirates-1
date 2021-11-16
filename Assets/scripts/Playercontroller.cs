@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Playercontroller : MonoBehaviour
 {
+
     public CharacterController controller;
     public Transform cam;
     public float speed = 6f;
@@ -44,6 +45,9 @@ public class Playercontroller : MonoBehaviour
         coin = GameObject.FindGameObjectWithTag("Coin");
         anim.SetBool("weapondrawn", false);
         damageTimer = 10;
+
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     void TakeDamage(int damage)
@@ -230,5 +234,18 @@ public class Playercontroller : MonoBehaviour
 
 
     }
+
+    /*private void HandleHookShotStart()
+    {
+        if (Input.GetKey("e"))
+        {
+            if (Physics.Raycast(playercam.transform.position, playercam.transform.forward, out RaycastHit raycastHit))
+            {
+                // hit something
+                debugHitPointtransform.position = raycastHit.point;
+            }
+        }
+    }*/
+
 
 }
