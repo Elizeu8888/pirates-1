@@ -5,7 +5,8 @@ using UnityEngine;
 public class Playercontroller : MonoBehaviour
 {
 
-    public CharacterController controller;
+    //public CharacterController controller;
+    public Rigidbody rb;
     public Transform cam;
     public float speed = 6f;
     public float turnsmoothing = 0.1f;// for movement
@@ -42,7 +43,6 @@ public class Playercontroller : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         ground = GameObject.FindGameObjectWithTag("ground");
-        coin = GameObject.FindGameObjectWithTag("Coin");
         anim.SetBool("weapondrawn", false);
         damageTimer = 10;
 
@@ -69,8 +69,8 @@ public class Playercontroller : MonoBehaviour
 
 
 
-        velocity.y += gravity * Time.deltaTime;// here you fall faster the longer you fall
-        controller.Move(velocity * Time.deltaTime);
+        //velocity.y += gravity * Time.deltaTime;// here you fall faster the longer you fall
+        //rb.MovePosition(velocity * Time.deltaTime);
 
 
 
@@ -86,15 +86,15 @@ public class Playercontroller : MonoBehaviour
 
 
             Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;// here is the movement
-            controller.Move(movedir.normalized * speed * Time.deltaTime);
+            rb.AddForce(movedir.normalized * speed * Time.deltaTime, ForceMode.VelocityChange);
         }
         else
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
         }
 
         anim.SetBool("walking", false);
-        if ((GetComponent<Rigidbody>().velocity.magnitude > 0.1) && isgrounded)
+        if ((rb.velocity.magnitude > 0.1) && isgrounded)
         {
             anim.SetBool("walking", true);
 
@@ -106,7 +106,7 @@ public class Playercontroller : MonoBehaviour
 
 
 
-        if (isgrounded && velocity.y < 0)
+        if (!isgrounded && velocity.y < 0)
         {
             velocity.y = -13f;
         }
@@ -116,9 +116,9 @@ public class Playercontroller : MonoBehaviour
 
 
 
-        if (Input.GetKey("space") && isgrounded)
+        if (Input.GetKeyDown("space") && isgrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);// here u jump
+            rb.AddForce(transform.up * jumpheight, ForceMode.VelocityChange);// here u jump
         }
 
 

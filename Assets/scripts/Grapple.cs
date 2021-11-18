@@ -43,7 +43,7 @@ public class Grapple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hook == null && Input.GetMouseButton(1))
+        if (hook == null && Input.GetMouseButtonDown(1))
         {
             StopAllCoroutines();
             pulling = false;
@@ -51,7 +51,7 @@ public class Grapple : MonoBehaviour
             hook.Initialize(this, shootTransform);
             StartCoroutine(DestroyHookAfterLifetime());
         }
-        else if (hook != null && Input.GetMouseButton(1))
+        else if (hook != null && Input.GetMouseButtonDown(1))
         {
             DestroyHook();
         }
