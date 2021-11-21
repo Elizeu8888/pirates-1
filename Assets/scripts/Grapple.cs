@@ -13,10 +13,15 @@ public class Grapple : MonoBehaviour
     bool pulling;
     Rigidbody rigid;
 
+    public Playercontroller playerscript;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         rigid = GetComponent<Rigidbody>();
         pulling = false;
 
@@ -66,7 +71,8 @@ public class Grapple : MonoBehaviour
         else
         {
             rigid.AddForce((hook.transform.position - transform.position).normalized * pullspeed, ForceMode.VelocityChange);
-
+            
+            playerscript.isgrounded = false;
         }
 
     }

@@ -11,7 +11,7 @@ public class Playercontroller : MonoBehaviour
     public float speed = 6f;
     public float turnsmoothing = 0.1f;// for movement
     float turnsmoothvelocity = 0.5f;
-
+    public float maxVelocity = 1f;
     public Healthbar healthbar;
     public int maxHealth = 100;// health
     public int currentHealth;
@@ -69,8 +69,7 @@ public class Playercontroller : MonoBehaviour
 
 
 
-        //velocity.y += gravity * Time.deltaTime;// here you fall faster the longer you fall
-        //rb.MovePosition(velocity * Time.deltaTime);
+        
 
 
 
@@ -86,12 +85,22 @@ public class Playercontroller : MonoBehaviour
 
 
             Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;// here is the movement
-            rb.AddForce(movedir.normalized * speed * Time.deltaTime, ForceMode.VelocityChange);
+            rb.AddForce(movedir.normalized * speed * Time.deltaTime, ForceMode.Impulse);
         }
         else
         {
             rb.velocity = Vector3.zero;
         }
+        if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
+        {
+            //limiting the velocity
+            GetComponent<Rigidbody>().velocity *= 0.99f;
+        }
+
+
+
+
+
 
         anim.SetBool("walking", false);
         if ((rb.velocity.magnitude > 0.1) && isgrounded)
@@ -105,21 +114,23 @@ public class Playercontroller : MonoBehaviour
         }
 
 
-
-        if (!isgrounded && velocity.y < 0)
-        {
-            velocity.y = -13f;
-        }
-
-
-
-
-
-
         if (Input.GetKeyDown("space") && isgrounded)
         {
-            rb.AddForce(transform.up * jumpheight, ForceMode.VelocityChange);// here u jump
+            rb.AddForce(transform.up * jumpheight, ForceMode.Impulse);// here u jump
         }
+
+        if (!isgrounded && velocity.y <= 0)
+        {
+            //velocity.y += -9f * Time.deltaTime;  // here you fall faster the longer you fall
+            //rb.MovePosition(velocity * Time.deltaTime);
+            velocity.y = -5f;
+        }
+
+
+
+
+
+
 
 
 
