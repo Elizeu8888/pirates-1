@@ -9,6 +9,9 @@ public class Grapple : MonoBehaviour
     [SerializeField] GameObject hookPrefab;
     [SerializeField] Transform shootTransform;
 
+
+    public Animator anim;
+
     Hook hook;
     bool pulling;
     Rigidbody rigid;
@@ -46,7 +49,7 @@ public class Grapple : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (hook == null && Input.GetMouseButtonDown(1))
         {
@@ -71,7 +74,7 @@ public class Grapple : MonoBehaviour
         else
         {
             rigid.AddForce((hook.transform.position - transform.position).normalized * pullspeed, ForceMode.VelocityChange);
-            
+            anim.Play("jumpfalling");
             playerscript.isgrounded = false;
         }
 

@@ -6,50 +6,64 @@ public class Playercontroller : MonoBehaviour
 {
 
     //public CharacterController controller;
+
+    //......................................
     public Rigidbody rb;
     public Transform cam;
     public float speed = 6f;
     public float turnsmoothing = 0.1f;// for movement
     float turnsmoothvelocity = 0.5f;
     public float maxVelocity = 1f;
+
+    //......................................
+
     public Healthbar healthbar;
     public int maxHealth = 100;// health
     public int currentHealth;
 
+    //......................................
     private int damageTimer;
+    //......................................
 
-    public static int playerscore = 0;
-
-    GameObject coin;
     GameObject ground;
 
     public float gravity = -9.81f;
     public float jumpheight = 5f;// for jumping
+
+    //......................................
 
     public Transform groundcheck;
     public float grounddistance = 0.4f;// for is grounded
     public LayerMask groundmask;
     public Collider groundedcheck;
 
-
+    //......................................
 
     public bool isgrounded;
     Vector3 velocity;
-
     public Animator anim;
+
+    //......................................
+
+
 
     void Start()
     {
         currentHealth = maxHealth;
+
         healthbar.SetMaxHealth(maxHealth);
+
         ground = GameObject.FindGameObjectWithTag("ground");
+
         anim.SetBool("weapondrawn", false);
+
         damageTimer = 10;
 
         Cursor.lockState = CursorLockMode.Locked;
 
     }
 
+    //......................................
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -57,21 +71,19 @@ public class Playercontroller : MonoBehaviour
         healthbar.SetHealth(currentHealth);
 
     }
-
+    //......................................
 
     void Update()
     {
 
+        //......................................
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");// uses imput to find direction
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
-
-
-
         
 
-
+        //......................................
 
         if (direction.magnitude >= 0.1f)
         {
@@ -93,11 +105,11 @@ public class Playercontroller : MonoBehaviour
         }
         if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
         {
-            //limiting the velocity
-            GetComponent<Rigidbody>().velocity *= 0.99f;
+            //limiting the velocity yes
+            GetComponent<Rigidbody>().velocity *= 0.9f;
         }
 
-
+        //......................................
 
 
 
@@ -113,11 +125,14 @@ public class Playercontroller : MonoBehaviour
             anim.SetBool("walking", false);
         }
 
+        //......................................
 
         if (Input.GetKeyDown("space") && isgrounded)
         {
             rb.AddForce(transform.up * jumpheight, ForceMode.Impulse);// here u jump
         }
+
+        //......................................
 
         if (!isgrounded && velocity.y <= 0)
         {
@@ -126,24 +141,13 @@ public class Playercontroller : MonoBehaviour
             velocity.y = -5f;
         }
 
+        //......................................
 
 
-
-
-
-
-
-
-        anim.SetLayerWeight(1, 0);
-
-        anim.SetBool("jump", false);
+        anim.SetLayerWeight(1, 0)
 
         if (Input.GetMouseButton(0))
         {
-
-
-
-
 
             anim.SetLayerWeight(1, 1);
         }
@@ -153,11 +157,9 @@ public class Playercontroller : MonoBehaviour
         }
 
 
-
+        //......................................
 
         anim.SetBool("grounded", false);
-
-
 
         if (!isgrounded)
         {
@@ -168,9 +170,7 @@ public class Playercontroller : MonoBehaviour
             anim.SetBool("grounded", true);
         }
 
-
-
-
+        //......................................
 
     }
 

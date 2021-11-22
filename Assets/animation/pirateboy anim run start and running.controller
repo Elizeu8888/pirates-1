@@ -219,7 +219,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Armature|jump falling
+  m_Name: jumpfalling
   m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
@@ -277,7 +277,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4814797467756660224}
-    m_Position: {x: 31.35727, y: 262.34692, z: 0}
+    m_Position: {x: -80, y: 190, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -327,17 +327,17 @@ AnimatorStateMachine:
     m_Position: {x: 40, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -693489218271599957}
-    m_Position: {x: -110, y: 270, z: 0}
+    m_Position: {x: 40, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3487319340168976557}
-    m_Position: {x: 240, y: 270, z: 0}
+    m_Position: {x: 260, y: 270, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 903897005137673991}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 380, y: -110, z: 0}
+  m_AnyStatePosition: {x: 250, y: 150, z: 0}
   m_EntryPosition: {x: 40, y: 0, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
