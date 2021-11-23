@@ -144,7 +144,7 @@ public class Playercontroller : MonoBehaviour
         //......................................
 
 
-        anim.SetLayerWeight(1, 0)
+        anim.SetLayerWeight(1, 0);
 
         if (Input.GetMouseButton(0))
         {
