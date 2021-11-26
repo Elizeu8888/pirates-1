@@ -12,6 +12,10 @@ public class Grapple : MonoBehaviour
 
     public Animator anim;
 
+    public bool isgrappling;
+
+
+
     Hook hook;
     bool pulling;
     Rigidbody rigid;
@@ -69,13 +73,14 @@ public class Grapple : MonoBehaviour
         if (Vector3.Distance(transform.position, hook.transform.position) <= stopDistance)
         {
             DestroyHook();
-
+            isgrappling = false;
         }
         else
         {
-            rigid.AddForce((hook.transform.position - transform.position).normalized * pullspeed, ForceMode.VelocityChange);
+            rigid.AddForce((hook.transform.position - transform.position).normalized * pullspeed, ForceMode.VelocityChange);// here it pulls you
             anim.Play("jumpfalling");
             playerscript.isgrounded = false;
+            isgrappling = true;
         }
 
     }

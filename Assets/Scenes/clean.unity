@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1356720107}
   m_Lens:
     FieldOfView: 45
     OrthographicSize: 10
@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51200283}
   m_LocalRotation: {x: -0.0034133818, y: 0.9962221, z: -0.07335447, w: -0.046357907}
-  m_LocalPosition: {x: -1.7615275, y: 6.578233, z: 8.415478}
+  m_LocalPosition: {x: 2.7, y: 8.4, z: 19.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1072809673}
@@ -449,9 +449,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a2a6cd11777e885439f7ec690432786f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a2a6cd11777e885439f7ec690432786f, type: 3}
       propertyPath: m_Name
       value: pirates outfits
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a2a6cd11777e885439f7ec690432786f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2a6cd11777e885439f7ec690432786f, type: 3}
@@ -6396,7 +6404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_FollowOffset: {x: 2.7, y: 4.3399997, z: 19.2}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -7025,14 +7033,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1356720104}
   cam: {fileID: 963194228}
-  speed: 200
+  speed: 100
   turnsmoothing: 0.1
   maxVelocity: 200
   healthbar: {fileID: 1541590139}
   maxHealth: 100
   currentHealth: 100
-  gravity: -50
-  jumpheight: 100
+  jumpheight: 50
   groundcheck: {fileID: 840123664}
   grounddistance: 0.4
   groundmask:
@@ -7134,11 +7141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30aa10eab35d83246836de991559e4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullspeed: 5
+  pullspeed: 15
   stopDistance: 4
   hookPrefab: {fileID: 3479472047617085660, guid: e9f2b89ed176fed43a2c13e102450419, type: 3}
   shootTransform: {fileID: 1878674916}
   anim: {fileID: 608540089}
+  isgrappling: 0
   playerscript: {fileID: 1356720106}
 --- !u!1 &1357000312
 GameObject:
@@ -12222,6 +12230,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b49e79114175695469cd19f1e85f7a5c, type: 3}
+--- !u!1001 &1487160771
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1960106888}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.60427976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6044255
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6044348
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.4615041e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0037168886
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00079914846
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.737825
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.67499214
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000014473799
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000000026213771
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -84.907
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
+      propertyPath: m_Name
+      value: pirates outfits coat 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48649e43964988546a3ea7af83b06bd7, type: 3}
 --- !u!1 &1541590137
 GameObject:
   m_ObjectHideFlags: 0

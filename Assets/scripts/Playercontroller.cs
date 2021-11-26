@@ -5,6 +5,8 @@ using UnityEngine;
 public class Playercontroller : MonoBehaviour
 {
 
+    //private VectorExtensions vectorExtensions;
+
     //public CharacterController controller;
 
     //......................................
@@ -27,7 +29,9 @@ public class Playercontroller : MonoBehaviour
 
     GameObject ground;
 
-    public float gravity = -9.81f;
+    Grapple grappleScript;
+
+    //public float gravity = -9.81f;
     public float jumpheight = 5f;// for jumping
 
     //......................................
@@ -51,6 +55,8 @@ public class Playercontroller : MonoBehaviour
     {
         currentHealth = maxHealth;
 
+        grappleScript = GetComponent<Grapple>();
+
         healthbar.SetMaxHealth(maxHealth);
 
         ground = GameObject.FindGameObjectWithTag("ground");
@@ -62,6 +68,9 @@ public class Playercontroller : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
     }
+
+
+
 
     //......................................
     void TakeDamage(int damage)
@@ -85,7 +94,7 @@ public class Playercontroller : MonoBehaviour
 
         //......................................
 
-        if (direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f && grappleScript.isgrappling == false)
         {
 
 
@@ -101,7 +110,14 @@ public class Playercontroller : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector3.zero;
+
+            Vector3 resultVelocity = rb.velocity;
+            resultVelocity.z = 0;
+            resultVelocity.x = 0;
+            rb.velocity = resultVelocity;
+
+
+            //rb.velocity = VectorExtensions.XZvel;//ruining the gravity FIX IT
         }
         if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
         {
@@ -115,7 +131,7 @@ public class Playercontroller : MonoBehaviour
 
 
         anim.SetBool("walking", false);
-        if ((rb.velocity.magnitude > 0.1) && isgrounded)
+        if ((rb.velocity.magnitude > 1) && isgrounded)
         {
             anim.SetBool("walking", true);
 
