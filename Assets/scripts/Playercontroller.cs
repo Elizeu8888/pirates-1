@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Playercontroller : MonoBehaviour
 {
-
     //private VectorExtensions vectorExtensions;
 
     //public CharacterController controller;
@@ -91,6 +90,14 @@ public class Playercontroller : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");// uses imput to find direction
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         
+        if (Input.GetMouseButton(0))
+        {
+            transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+        }
+        else
+        {
+            transform.Rotate(0, Input.GetAxis("Horizontal") * 3 * Time.deltaTime, 0);
+        }
 
         //......................................
 
@@ -101,8 +108,13 @@ public class Playercontroller : MonoBehaviour
             float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;// finds direction of movement
 
 
+
+
+
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);// makes it so the player faces its movement direction
             transform.rotation = Quaternion.Euler(0f, angle, 0f);// makes it so the player faces its movement direction
+
+
 
 
             Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;// here is the movement
@@ -266,7 +278,7 @@ public class Playercontroller : MonoBehaviour
     {
         if (Input.GetKey("e"))
         {
-            if (Physics.Raycast(playercam.transform.position, playercam.transform.forward, out RaycastHit raycastHit))
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit raycastHit))
             {
                 // hit something
                 debugHitPointtransform.position = raycastHit.point;

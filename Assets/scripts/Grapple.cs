@@ -23,9 +23,6 @@ public class Grapple : MonoBehaviour
     public Playercontroller playerscript;
 
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -50,11 +47,18 @@ public class Grapple : MonoBehaviour
 
     }
 
+    void Update()
+    {
+
+    }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
+
         if (hook == null && Input.GetMouseButtonDown(1))
         {
             StopAllCoroutines();
