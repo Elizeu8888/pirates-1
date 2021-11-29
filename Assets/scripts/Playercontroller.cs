@@ -8,6 +8,11 @@ public class Playercontroller : MonoBehaviour
 
     //public CharacterController controller;
 
+    private bool punching;
+
+    private float flametimer;
+    public GameObject flameparticle;
+
     //......................................
     public Rigidbody rb;
     public Transform cam;
@@ -52,6 +57,10 @@ public class Playercontroller : MonoBehaviour
 
     void Start()
     {
+
+        flametimer = 0;
+
+
         currentHealth = maxHealth;
 
         grappleScript = GetComponent<Grapple>();
@@ -110,9 +119,12 @@ public class Playercontroller : MonoBehaviour
 
 
 
+            if (!punching)
+            {
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);// makes it so the player faces its movement direction
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);// makes it so the player faces its movement direction
+            }
 
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);// makes it so the player faces its movement direction
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);// makes it so the player faces its movement direction
 
 
 
@@ -139,8 +151,9 @@ public class Playercontroller : MonoBehaviour
 
         //......................................
 
+        Triggerfire();
 
-
+        //......................................
 
         anim.SetBool("walking", false);
         if ((rb.velocity.magnitude > 1) && isgrounded)
@@ -176,11 +189,12 @@ public class Playercontroller : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-
+            punching = true;
             anim.SetLayerWeight(1, 1);
         }
         else
         {
+            punching = false;
             anim.SetLayerWeight(1, 0);
         }
 
@@ -211,7 +225,28 @@ public class Playercontroller : MonoBehaviour
 
     }
 
+    void Triggerfire()
+    {
 
+        if (flametimer > 0)
+        {
+            flameparticle.SetActive(true);
+
+            flametimer -= Time.deltaTime;
+
+        }
+        else
+        {
+            flameparticle.SetActive(false);
+        }
+
+        if (Input.GetKey("i"))
+        {
+            flametimer = 3;
+
+        }
+
+    }
 
 
     void OnTriggerStay(Collider other)

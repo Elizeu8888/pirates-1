@@ -15,5 +15,13 @@ public class GrappleAim : MonoBehaviour
     {
         //transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
         //transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.x, 0);
+        if (Input.GetMouseButton(0))
+        {
+            transform.rotation = Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, 0);
+        }
+        else
+        {
+            //transform.Rotate(Input.GetAxis("Vertical") * 3 * Time.deltaTime, 0, 0);
+        }
     }
 }
