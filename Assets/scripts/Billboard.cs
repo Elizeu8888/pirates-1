@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Billboard : MonoBehaviour
+{
+    public Transform cam;
+
+
+    void Start()
+    {
+        
+    }
+
+
+    void LateUpdate()
+    {
+        transform.LookAt(cam.position);
+    }
+}
