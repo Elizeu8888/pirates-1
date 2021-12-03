@@ -8,6 +8,12 @@ public class Playercontroller : MonoBehaviour
 
     //public CharacterController controller;
 
+
+    public float xp;
+    public bool isead;
+
+
+    //............................
     private bool punching;
 
     private float flametimer;
@@ -28,7 +34,7 @@ public class Playercontroller : MonoBehaviour
     public int currentHealth;
 
     //......................................
-    private int damageTimer;
+    private float damageTimer;
     //......................................
 
     GameObject ground;
@@ -60,6 +66,8 @@ public class Playercontroller : MonoBehaviour
 
         flametimer = 0;
 
+        GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
+        GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
 
         currentHealth = maxHealth;
 
@@ -102,10 +110,20 @@ public class Playercontroller : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+
+
+            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
+            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
+
         }
         else
         {
             transform.Rotate(0, Input.GetAxis("Horizontal") * 3 * Time.deltaTime, 0);
+
+
+            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
+            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
+
         }
 
         //......................................

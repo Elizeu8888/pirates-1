@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
     {
 
 
-        if (Input.GetKey("f") && weaponout == false)
+        if (Input.GetKey("f"))
         {
             print("ddd");
             transform.SetParent(hand);
@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
 
 
 
-        if (Input.GetKey("f") && weaponout == true)
+        if (Input.GetKey("g"))
         {
 
             print("ddd");
@@ -58,11 +58,12 @@ public class Weapon : MonoBehaviour
         
         if (weaponout == false)
         {
-           
+            transform.SetParent(back);
         }
 
 
     }
+
 
 
 
