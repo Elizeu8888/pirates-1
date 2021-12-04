@@ -11,7 +11,7 @@ public class Enemymove : MonoBehaviour
     //
     private int damageTimer;
 
-    public bool killed;
+    public bool killed = false;
 
 
     public float respawntime;
@@ -23,6 +23,8 @@ public class Enemymove : MonoBehaviour
         currentHealth = maxHealth;
 
         healthbar.SetMaxHealth(maxHealth);
+
+        killed = false;
 
         respawntime = 6;
 
@@ -44,9 +46,9 @@ public class Enemymove : MonoBehaviour
     {
         
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             killed = true;
 
 
@@ -61,18 +63,19 @@ public class Enemymove : MonoBehaviour
 
 
 
-        if(killed)
+        /*if (killed == true)
         {
 
             respawntime -= Time.deltaTime;
-            if(respawntime < 0)
+            if(respawntime <= 0)
             {
                 gameObject.SetActive(true);
                 currentHealth = maxHealth;
                 respawntime = 6;
+                killed = false;
             }
 
-        }
+        }*/
 
 
     }
