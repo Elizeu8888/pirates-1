@@ -8,7 +8,8 @@ public class Playercontroller : MonoBehaviour
 
     //public CharacterController controller;
 
-
+    public GameObject lockUI;
+    public bool locked;
     public float xp;
     public bool isead;
 
@@ -63,6 +64,7 @@ public class Playercontroller : MonoBehaviour
 
     void Start()
     {
+        lockUI.SetActive(false);
 
         flametimer = 0;
 
@@ -106,25 +108,53 @@ public class Playercontroller : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");// uses imput to find direction
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-        
-        if (Input.GetMouseButton(0))
+
+
+        if(!locked)
         {
+            print("gggggg");
+            if (Input.GetKey("l"))
+            {
+
+                locked = true;
+
+            }
+        }
+
+        if (locked)
+        {
+            lockUI.SetActive(true);
             transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+            if (Input.GetMouseButton(0))
+            {
+                punching = true;
+                anim.SetLayerWeight(1, 1);
+                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
+                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
 
+            }
+            else
+            {
+                punching = false;
+                anim.SetLayerWeight(1, 0);
+                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
+                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
 
-            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
-            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
+            }
+            if (Input.GetKey("l"))
+            {
 
+                locked = false;
+
+            }
         }
         else
         {
+            lockUI.SetActive(false);
             transform.Rotate(0, Input.GetAxis("Horizontal") * 3 * Time.deltaTime, 0);
-
-
-            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
-            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
-
         }
+
+
 
         //......................................
 
@@ -205,16 +235,6 @@ public class Playercontroller : MonoBehaviour
 
         anim.SetLayerWeight(1, 0);
 
-        if (Input.GetMouseButton(0))
-        {
-            punching = true;
-            anim.SetLayerWeight(1, 1);
-        }
-        else
-        {
-            punching = false;
-            anim.SetLayerWeight(1, 0);
-        }
 
 
         //......................................
@@ -237,6 +257,7 @@ public class Playercontroller : MonoBehaviour
     void FixedUpdate()
     {
         isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
+
 
 
 
