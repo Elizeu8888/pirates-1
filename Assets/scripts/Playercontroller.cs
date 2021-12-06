@@ -6,13 +6,20 @@ public class Playercontroller : MonoBehaviour
 {
     //private VectorExtensions vectorExtensions;
 
+    Vector3 direction;
+
     //public CharacterController controller;
 
     public GameObject lockUI;
     public bool locked;
-    public float xp;
-    public bool isead;
 
+    public bool isdead;
+
+    //............................
+
+    public XPbar xpscript;
+    public float xp;
+    public float maxXP = 100;
 
     //............................
     private bool punching;
@@ -77,6 +84,8 @@ public class Playercontroller : MonoBehaviour
 
         healthbar.SetMaxHealth(maxHealth);
 
+        xpscript.SetMaxXP(maxXP);
+
         ground = GameObject.FindGameObjectWithTag("ground");
 
         anim.SetBool("weapondrawn", false);
@@ -107,46 +116,22 @@ public class Playercontroller : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");// uses imput to find direction
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+        xpscript.SetXP(xp);
 
-        if(!locked)
+        if (Input.GetKey("l"))
         {
-            print("gggggg");
-            if (Input.GetKey("l"))
-            {
 
-                locked = true;
+            locked = !locked;
 
-            }
         }
 
-        if (locked)
+        if (locked == true)
         {
             lockUI.SetActive(true);
             transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
-            if (Input.GetMouseButton(0))
-            {
-                punching = true;
-                anim.SetLayerWeight(1, 1);
-                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
-                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
 
-            }
-            else
-            {
-                punching = false;
-                anim.SetLayerWeight(1, 0);
-                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
-                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
-
-            }
-            if (Input.GetKey("l"))
-            {
-
-                locked = false;
-
-            }
         }
         else
         {
@@ -155,8 +140,111 @@ public class Playercontroller : MonoBehaviour
         }
 
 
+        if (Input.GetMouseButton(0))
+        {
+            punching = true;
+            
+            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
+            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
+
+        }
+        else
+        {
+            punching = false;
+
+            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
+            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
+
+        }
+
+
+
+
+
+
 
         //......................................
+
+
+        if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
+        {
+            //limiting the velocity yes
+            GetComponent<Rigidbody>().velocity *= 0.9f;
+        }
+
+        //......................................
+
+        Triggerfire();
+
+        //......................................
+
+        anim.SetBool("walking", false);
+        if ((rb.velocity.magnitude > 1) && isgrounded)
+        {
+            anim.SetBool("walking", true);
+
+        }
+        else
+        {
+            anim.SetBool("walking", false);
+        }
+
+        //......................................
+
+
+
+        //......................................
+
+        if (!isgrounded && velocity.y <= 0)
+        {
+            //velocity.y += -9f * Time.deltaTime;  // here you fall faster the longer you fall
+            //rb.MovePosition(velocity * Time.deltaTime);
+            velocity.y = -5f;
+        }
+
+        //......................................
+
+
+        anim.SetLayerWeight(1, 0);
+        if (punching)
+        {
+            anim.SetLayerWeight(1, 1);
+        }
+        else
+        {
+            anim.SetLayerWeight(1, 0);
+
+        }
+
+
+
+        //......................................
+
+        anim.SetBool("grounded", false);
+
+        if (!isgrounded)
+        {
+            anim.SetBool("grounded", false);
+        }
+        if (isgrounded)
+        {
+            anim.SetBool("grounded", true);
+        }
+
+        //......................................
+
+    }
+
+    public void FixedUpdate()
+    {
+        isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
+
+
+        if (Input.GetKeyDown("space") && isgrounded)
+        {
+            rb.AddForce(transform.up * jumpheight, ForceMode.Impulse);// here u jump
+        }
+
 
         if (direction.magnitude >= 0.1f && grappleScript.isgrappling == false)
         {
@@ -191,74 +279,6 @@ public class Playercontroller : MonoBehaviour
 
             //rb.velocity = VectorExtensions.XZvel;//ruining the gravity FIX IT
         }
-        if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
-        {
-            //limiting the velocity yes
-            GetComponent<Rigidbody>().velocity *= 0.9f;
-        }
-
-        //......................................
-
-        Triggerfire();
-
-        //......................................
-
-        anim.SetBool("walking", false);
-        if ((rb.velocity.magnitude > 1) && isgrounded)
-        {
-            anim.SetBool("walking", true);
-
-        }
-        else
-        {
-            anim.SetBool("walking", false);
-        }
-
-        //......................................
-
-        if (Input.GetKeyDown("space") && isgrounded)
-        {
-            rb.AddForce(transform.up * jumpheight, ForceMode.Impulse);// here u jump
-        }
-
-        //......................................
-
-        if (!isgrounded && velocity.y <= 0)
-        {
-            //velocity.y += -9f * Time.deltaTime;  // here you fall faster the longer you fall
-            //rb.MovePosition(velocity * Time.deltaTime);
-            velocity.y = -5f;
-        }
-
-        //......................................
-
-
-        anim.SetLayerWeight(1, 0);
-
-
-
-        //......................................
-
-        anim.SetBool("grounded", false);
-
-        if (!isgrounded)
-        {
-            anim.SetBool("grounded", false);
-        }
-        if (isgrounded)
-        {
-            anim.SetBool("grounded", true);
-        }
-
-        //......................................
-
-    }
-
-    void FixedUpdate()
-    {
-        isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
-
-
 
 
 
@@ -290,7 +310,7 @@ public class Playercontroller : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        print("ontrigger=" + other.gameObject.tag);
+        
 
 
         

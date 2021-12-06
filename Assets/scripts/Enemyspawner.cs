@@ -5,29 +5,48 @@ using UnityEngine;
 public class Enemyspawner : MonoBehaviour
 {
 
+    public Healthbar healthbar;
+
     public GameObject enemyPrefab;
+
+    GameObject newEnemy;
 
     Enemymove enemyscript;
 
-    // Start is called before the first frame update
+    public GameObject player;
+
+    Playercontroller playerscript;
+
     void Start()
     {
 
-        enemyscript = enemyPrefab.GetComponent<Enemymove>();
-        enemyscript.killed = false;
 
-        Instantiate(enemyPrefab, new Vector3(-12, 2, 22), Quaternion.identity);
 
         
 
+        newEnemy = Instantiate(enemyPrefab, new Vector3(-12, 2, 22), Quaternion.identity);
+        //Instantiate(enemyPrefab, new Vector3(-12, 2, 22), Quaternion.identity);
+
+        enemyscript = newEnemy.GetComponent<Enemymove>();
+        enemyscript.killed = false;
+
+        playerscript = player.GetComponent<Playercontroller>();
+
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
         if(enemyscript.currentHealth <= 0)
         {
+            newEnemy.transform.position = new Vector3(-12, 2, 22);
+
+            playerscript.xp += 20;
+
+            enemyscript.currentHealth = enemyscript.maxHealth;
+            //healthbar.SetHealth(enemyscript.currentHealth);
             enemyscript.killed = true;
         }
 
@@ -35,9 +54,13 @@ public class Enemyspawner : MonoBehaviour
         
         if(enemyscript.killed == true)
         {
-            enemyscript.killed = false;
-            Instantiate(enemyPrefab, new Vector3(-12, 2, 22), Quaternion.identity);
             
+            //enemyscript.currentHealth = enemyscript.maxHealth;
+            enemyscript.killed = false;
+
+            
+            
+
         }
 
 
