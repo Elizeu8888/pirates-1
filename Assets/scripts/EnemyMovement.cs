@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public enum States
+    /*public enum States
     {
         Idle,
         Walk,
         BackUp
 
-    }
+    }*/
 
     public float movespeed = 25f;
 
-    States state = States.Idle;
+    //States state = States.Idle;
+    public int state = 0;
     float stateTimer = 2;
 
     Rigidbody rb;
@@ -60,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
 
         stateTimer -= Time.deltaTime;
 
-        if (state == States.Idle)
+        if (state == 0)
         {
 
             anim.SetBool("walking", false);
@@ -68,13 +69,13 @@ public class EnemyMovement : MonoBehaviour
 
 
         }
-        if (state ==States.Walk)
+        if (state == 1)
         {
 
             anim.SetBool("walking", true);
             Walk();
         }
-        if(state == States.BackUp)
+        if(state == 2)
         {
             BackUp();
             stateTimer = 2;
@@ -82,7 +83,7 @@ public class EnemyMovement : MonoBehaviour
 
             if (stateTimer <= 0)
             {
-                state = States.Idle;
+                state = 0;
             }
         }
 
