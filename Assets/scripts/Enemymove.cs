@@ -13,6 +13,7 @@ public class Enemymove : MonoBehaviour
 
     public bool killed = false;
 
+    EnemyMovement enemystate;
 
     public float respawntime;
 
@@ -21,6 +22,8 @@ public class Enemymove : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
+        enemystate = GetComponent<EnemyMovement>();
 
         healthbar.SetMaxHealth(maxHealth);
 
@@ -97,6 +100,10 @@ public class Enemymove : MonoBehaviour
 
         if (other.gameObject.tag == "weapon")
         {
+
+            enemystate.state = 2;
+
+
             if (damageTimer < 0)
             {
                 TakeDamage(10);
