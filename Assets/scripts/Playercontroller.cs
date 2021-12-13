@@ -8,6 +8,11 @@ public class Playercontroller : MonoBehaviour
 
     Vector3 direction;
 
+
+
+
+    public GameObject inventory;
+    public bool invOUT = false;
     //public CharacterController controller;
 
     public GameObject lockUI;
@@ -112,6 +117,89 @@ public class Playercontroller : MonoBehaviour
     void Update()
     {
 
+
+
+        if (Input.GetKey("e"))
+        {
+            invOUT = !invOUT;
+            if (invOUT == true)
+            {
+                inventory.active = true;
+
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+            else if (invOUT == false)
+            {
+                inventory.active = false;
+
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
+
+
+
+        if (invOUT == false)
+        {
+
+
+
+
+            if (Input.GetMouseButton(0))
+            {
+                punching = true;
+
+                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
+                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
+
+            }
+            else
+            {
+                punching = false;
+
+                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
+                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
+
+            }
+
+
+            if (Input.GetKey("l"))
+            {
+
+                locked = !locked;
+
+            }
+
+            if (locked == true)
+            {
+                lockUI.SetActive(true);
+                transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+
+            }
+            else
+            {
+                lockUI.SetActive(false);
+                transform.Rotate(0, Input.GetAxis("Horizontal") * 3 * Time.deltaTime, 0);
+            }
+            //......................................
+
+
+            anim.SetLayerWeight(1, 0);
+            if (punching)
+            {
+                anim.SetLayerWeight(1, 1);
+            }
+            else
+            {
+                anim.SetLayerWeight(1, 0);
+
+            }
+
+
+        }
+
+
+
+
         //......................................
 
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -120,42 +208,6 @@ public class Playercontroller : MonoBehaviour
 
         xpscript.SetXP(xp);
 
-        if (Input.GetKey("l"))
-        {
-
-            locked = !locked;
-
-        }
-
-        if (locked == true)
-        {
-            lockUI.SetActive(true);
-            transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
-
-        }
-        else
-        {
-            lockUI.SetActive(false);
-            transform.Rotate(0, Input.GetAxis("Horizontal") * 3 * Time.deltaTime, 0);
-        }
-
-
-        if (Input.GetMouseButton(0))
-        {
-            punching = true;
-            
-            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
-            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
-
-        }
-        else
-        {
-            punching = false;
-
-            GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
-            GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
-
-        }
 
 
 
@@ -202,20 +254,6 @@ public class Playercontroller : MonoBehaviour
             velocity.y = -5f;
         }
 
-        //......................................
-
-
-        anim.SetLayerWeight(1, 0);
-        if (punching)
-        {
-            anim.SetLayerWeight(1, 1);
-        }
-        else
-        {
-            anim.SetLayerWeight(1, 0);
-
-        }
-
 
 
         //......................................
@@ -231,6 +269,7 @@ public class Playercontroller : MonoBehaviour
             anim.SetBool("grounded", true);
         }
 
+
         //......................................
 
     }
@@ -239,6 +278,43 @@ public class Playercontroller : MonoBehaviour
     {
         isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
 
+        if (invOUT == false)
+        {
+            if (direction.magnitude >= 0.1f && grappleScript.isgrappling == false)
+            {
+
+
+                float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;// finds direction of movement
+
+
+
+
+                if (!punching)
+                {
+                    float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);// makes it so the player faces its movement direction
+                    transform.rotation = Quaternion.Euler(0f, angle, 0f);// makes it so the player faces its movement direction
+                }
+
+
+
+
+
+                Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;// here is the movement
+                rb.AddForce(movedir.normalized * speed * Time.deltaTime, ForceMode.Impulse);
+            }
+            else
+            {
+
+                Vector3 resultVelocity = rb.velocity;
+                resultVelocity.z = 0;
+                resultVelocity.x = 0;
+                rb.velocity = resultVelocity;
+
+
+                //rb.velocity = VectorExtensions.XZvel;//ruining the gravity FIX IT
+            }
+        }
+
 
         if (Input.GetKeyDown("space") && isgrounded)
         {
@@ -246,39 +322,7 @@ public class Playercontroller : MonoBehaviour
         }
 
 
-        if (direction.magnitude >= 0.1f && grappleScript.isgrappling == false)
-        {
 
-
-            float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;// finds direction of movement
-
-
-
-
-            if (!punching)
-            {
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);// makes it so the player faces its movement direction
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);// makes it so the player faces its movement direction
-            }
-
-
-
-
-
-            Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;// here is the movement
-            rb.AddForce(movedir.normalized * speed * Time.deltaTime, ForceMode.Impulse);
-        }
-        else
-        {
-
-            Vector3 resultVelocity = rb.velocity;
-            resultVelocity.z = 0;
-            resultVelocity.x = 0;
-            rb.velocity = resultVelocity;
-
-
-            //rb.velocity = VectorExtensions.XZvel;//ruining the gravity FIX IT
-        }
 
 
 
