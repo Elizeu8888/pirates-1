@@ -9,7 +9,9 @@ public class Playercontroller : MonoBehaviour
     Vector3 direction;
 
 
-
+    public float shieldtimer;
+    public ParticleSystem shield;
+    public GameObject shieldrune;
 
     public GameObject inventory;
     public bool invOUT = false;
@@ -116,7 +118,7 @@ public class Playercontroller : MonoBehaviour
 
     void Update()
     {
-
+        TriggerShield();
 
 
         if (Input.GetKey("e"))
@@ -345,10 +347,38 @@ public class Playercontroller : MonoBehaviour
 
         if (Input.GetKey("i"))
         {
-            flametimer = 3;
+            flametimer = 6;
 
         }
 
+
+
+
+
+
+    }
+
+    void TriggerShield()
+    {
+        if (shieldtimer > 0)
+        {
+            shield.Play();
+            shieldrune.SetActive(true);
+            shieldtimer -= Time.deltaTime;
+
+        }
+        else
+        {
+            shield.Stop();
+            shieldrune.SetActive(false);
+        
+        }
+
+        if (Input.GetKey("h"))
+        {
+            shieldtimer = 6;
+
+        }
     }
 
 
