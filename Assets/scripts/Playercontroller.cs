@@ -41,7 +41,7 @@ public class Playercontroller : MonoBehaviour
     public float turnsmoothing = 0.1f;// for movement
     float turnsmoothvelocity = 0.5f;
     public float maxVelocity = 1f;
-
+    Vector3 rbVelocity;
     //......................................
 
     public Healthbar healthbar;
@@ -218,12 +218,16 @@ public class Playercontroller : MonoBehaviour
 
 
         //......................................
+        rbVelocity = rb.velocity;
 
-
-        if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
+        if (rbVelocity.sqrMagnitude > maxVelocity)// right alt and shift for||||
         {
+            Vector3 endVelocity = rb.velocity;
             //limiting the velocity yes
-            GetComponent<Rigidbody>().velocity *= 0.9f;
+            endVelocity.z *= 0.9f;
+            endVelocity.x *= 0.9f;
+            rb.velocity = endVelocity;
+
         }
 
         //......................................
@@ -291,7 +295,7 @@ public class Playercontroller : MonoBehaviour
 
 
 
-                if (!punching)
+                if (!locked)
                 {
                     float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnsmoothvelocity, turnsmoothing);// makes it so the player faces its movement direction
                     transform.rotation = Quaternion.Euler(0f, angle, 0f);// makes it so the player faces its movement direction
@@ -318,7 +322,7 @@ public class Playercontroller : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown("space") && isgrounded)
+        if (Input.GetKey("space") && isgrounded)
         {
             rb.AddForce(transform.up * jumpheight, ForceMode.Impulse);// here u jump
         }
