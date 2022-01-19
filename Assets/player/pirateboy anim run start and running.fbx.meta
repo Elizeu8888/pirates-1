@@ -69,36 +69,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Armature|block' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'longarm.R' has scale animation that will
-      be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
-      has scale animation that will be discarded.\n\t'longarm.L' has scale animation
-      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
-      has scale animation that will be discarded.\n\nClip 'Armature|landing' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'longarm.R' has
-      scale animation that will be discarded.\n\t'forearm.R' has scale animation
-      that will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'longarm.L'
-      has scale animation that will be discarded.\n\t'forearm.L' has scale animation
-      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'foot.R'
-      has scale animation that will be discarded.\n\t'foot.L' has scale animation
-      that will be discarded.\n\nClip 'Armature|running.002' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'longarm.R' has scale animation
-      that will be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
-      has scale animation that will be discarded.\n\t'longarm.L' has scale animation
-      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
-      has scale animation that will be discarded.\n\t'calve.R' has scale animation
-      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'thigh.L'
-      has scale animation that will be discarded.\n\t'foot.L' has scale animation
-      that will be discarded.\n\nClip 'Armature|sword draw' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'forearm.R' has scale animation
-      that will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'forearm.L'
-      has scale animation that will be discarded.\n\t'hand.L' has scale animation
-      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'foot.L'
-      has scale animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -281,17 +252,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.6812415
-        functionName: NewEvent
+      - time: 0.37115836
+        functionName: Draw
         data: 
-        objectReferenceParameter: {fileID: 919132149155446097, guid: 5b2c536462cfd62468422fc3aada4bef, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0
-        functionName: NewEvent
-        data: 
-        objectReferenceParameter: {fileID: 919132149155446097, guid: 5b2c536462cfd62468422fc3aada4bef, type: 3}
+        objectReferenceParameter: {fileID: 6643228785309647063, guid: 81b5889a4ac45e944b34312c0a953cba, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

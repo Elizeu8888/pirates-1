@@ -188,10 +188,12 @@ public class Playercontroller : MonoBehaviour
             anim.SetLayerWeight(1, 0);
             if (punching)
             {
+                anim.SetBool("punching", true);
                 anim.SetLayerWeight(1, 1);
             }
             else
             {
+                anim.SetBool("punching", false);
                 anim.SetLayerWeight(1, 0);
 
             }
