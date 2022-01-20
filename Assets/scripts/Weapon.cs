@@ -29,30 +29,30 @@ public class Weapon : MonoBehaviour
 
         if (Input.GetKey("f") && weaponout == false)
         {
-
-            anim.SetTrigger("sworddraw");
+            anim.SetLayerWeight(2, 1);
+            anim.SetBool("Sworddraw", true);
             
             print("ddd");
-            transform.SetParent(hand);
 
-            transform.localPosition = new Vector3(0,0,0);
-            transform.localRotation = Quaternion.Euler(0,0,90);
+
+
 
             weaponout = true;
         }
 
         if (weaponout == true)
         {
-            anim.SetLayerWeight(1, 1);
+            anim.SetLayerWeight(2, 1);
+
         }
 
 
 
         if (Input.GetKey("g") && weaponout == true)
         {
-            anim.SetLayerWeight(1, 0);
+            anim.SetLayerWeight(2, 0);
             print("ddd");
-
+            anim.SetBool("Sworddraw", false);
             transform.SetParent(back);
             transform.localPosition = new Vector3(0, 0, 0);
             transform.localRotation = Quaternion.identity;
@@ -70,10 +70,15 @@ public class Weapon : MonoBehaviour
     }
 
 
-    public GameObject Draw(GameObject sword)
+    public void Draw()
     {
         print("hello");
-        return sword;
+        transform.SetParent(hand);
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+
+
     }
 
 

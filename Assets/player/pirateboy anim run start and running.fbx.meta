@@ -338,7 +338,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.44871795
+        functionName: Sworddraw
+        data: 
+        objectReferenceParameter: {fileID: 6643228785309647063, guid: 81b5889a4ac45e944b34312c0a953cba, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
