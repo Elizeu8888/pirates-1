@@ -75,6 +75,9 @@ public class Playercontroller : MonoBehaviour
     //......................................
 
 
+    public GameObject lefthand;
+    public GameObject righthand;
+
 
     void Start()
     {
@@ -82,8 +85,8 @@ public class Playercontroller : MonoBehaviour
 
         flametimer = 0;
 
-        GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
-        GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
+        lefthand.GetComponent<SphereCollider>().enabled = false;
+        righthand.GetComponent<SphereCollider>().enabled = false;
 
         currentHealth = maxHealth;
 
@@ -150,16 +153,16 @@ public class Playercontroller : MonoBehaviour
             {
                 punching = true;
 
-                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = true;
-                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = true;
+                lefthand.GetComponent<SphereCollider>().enabled = true;
+                righthand.GetComponent<SphereCollider>().enabled = true;
 
             }
             else
             {
                 punching = false;
 
-                GameObject.Find("hand.L").GetComponent<SphereCollider>().enabled = false;
-                GameObject.Find("hand.R").GetComponent<SphereCollider>().enabled = false;
+                lefthand.GetComponent<SphereCollider>().enabled = false;
+                righthand.GetComponent<SphereCollider>().enabled = false;
 
             }
 
