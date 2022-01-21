@@ -50,20 +50,19 @@ public class Weapon : MonoBehaviour
 
         if (Input.GetKey("g") && weaponout == true)
         {
-            anim.SetLayerWeight(2, 0);
+
             print("ddd");
             anim.SetBool("Sworddraw", false);
-            transform.SetParent(back);
-            transform.localPosition = new Vector3(0, 0, 0);
-            transform.localRotation = Quaternion.identity;
 
-            weaponout = false;
+
+
+            
         }
 
         
         if (weaponout == false)
         {
-            transform.SetParent(back);
+            anim.SetLayerWeight(2, 0);
         }
 
 
@@ -77,9 +76,17 @@ public class Weapon : MonoBehaviour
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-
-
     }
+    public void ReDraw()
+    {
+        transform.SetParent(back);
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.Euler(0,0,0);
+
+        weaponout = false;
+    }
+
+
 
 
 }

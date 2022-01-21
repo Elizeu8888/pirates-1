@@ -11,7 +11,7 @@ public class Enemyspawner : MonoBehaviour
 
     GameObject newEnemy;
 
-    Enemymove enemyscript;
+    EnemyController enemyscript;
 
     public GameObject player;
 
@@ -27,7 +27,7 @@ public class Enemyspawner : MonoBehaviour
         newEnemy = Instantiate(enemyPrefab, new Vector3(-12, 2, 22), Quaternion.identity);
         //Instantiate(enemyPrefab, new Vector3(-12, 2, 22), Quaternion.identity);
 
-        enemyscript = newEnemy.GetComponent<Enemymove>();
+        enemyscript = newEnemy.GetComponent<EnemyController>();
         enemyscript.killed = false;
 
         playerscript = player.GetComponent<Playercontroller>();
@@ -46,8 +46,9 @@ public class Enemyspawner : MonoBehaviour
             playerscript.xp += 20;
 
             enemyscript.currentHealth = enemyscript.maxHealth;
-            //healthbar.SetHealth(enemyscript.currentHealth);
+            healthbar.SetHealth(enemyscript.currentHealth);
             enemyscript.killed = true;
+
         }
 
 

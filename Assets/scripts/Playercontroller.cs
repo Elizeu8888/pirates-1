@@ -74,10 +74,12 @@ public class Playercontroller : MonoBehaviour
 
     //......................................
 
+    public EnemyController enemyhealth;
 
     public GameObject lefthand;
     public GameObject righthand;
 
+    public Collider fisthit;
 
     void Start()
     {
@@ -100,7 +102,7 @@ public class Playercontroller : MonoBehaviour
 
         anim.SetBool("weapondrawn", false);
 
-        damageTimer = 10;
+        damageTimer = 0f;
 
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -112,9 +114,8 @@ public class Playercontroller : MonoBehaviour
     //......................................
     void TakeDamage(int damage)
     {
-        currentHealth -= damage;
 
-        healthbar.SetHealth(currentHealth);
+
 
     }
     //......................................
@@ -124,7 +125,7 @@ public class Playercontroller : MonoBehaviour
         TriggerShield();
 
 
-        if (Input.GetKey("e"))
+        if (Input.GetKeyDown("e"))
         {
             invOUT = !invOUT;
             if (invOUT == true)
@@ -141,7 +142,7 @@ public class Playercontroller : MonoBehaviour
             }
         }
 
-
+        
 
         if (invOUT == false)
         {
@@ -167,7 +168,7 @@ public class Playercontroller : MonoBehaviour
             }
 
 
-            if (Input.GetKey("l"))
+            if (Input.GetKeyDown("l"))
             {
 
                 locked = !locked;
@@ -287,6 +288,9 @@ public class Playercontroller : MonoBehaviour
 
     public void FixedUpdate()
     {
+
+        healthbar.SetHealth(currentHealth);
+
         isgrounded = Physics.CheckSphere(groundcheck.position, grounddistance, groundmask);
 
         if (invOUT == false)
@@ -397,19 +401,37 @@ public class Playercontroller : MonoBehaviour
 
 
         
-        if (other.gameObject.tag == "enemy")
+        if (fisthit.gameObject.tag == "enemy")
         {
+
+
+
+
             if (damageTimer < 0)
             {
-                TakeDamage(5);
-                damageTimer = 10;
+                print("DAMAGE");
+
+
+
+
+
+                enemyhealth.currentHealth = enemyhealth.currentHealth - 20;
+                damageTimer = 2f;
             }
             else
             {
-                damageTimer--;
+                damageTimer -= Time.deltaTime;
             }
 
         }
+
+
+
+
+
+
+
+
 
         /*if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
         {

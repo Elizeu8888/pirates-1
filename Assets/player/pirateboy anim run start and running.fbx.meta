@@ -102,6 +102,15 @@ ModelImporter:
   - first:
       74: -6614313756021995646
     second: sword draw
+  - first:
+      74: 187018385809435893
+    second: sword idle
+  - first:
+      74: 8621151846719724869
+    second: sword draw.001
+  - first:
+      74: -6081029092390889347
+    second: sword redraw
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -117,46 +126,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'running.002' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'longarm.R' has scale animation that will
-      be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
-      has scale animation that will be discarded.\n\t'longarm.L' has scale animation
-      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
-      has scale animation that will be discarded.\n\t'calve.R' has scale animation
-      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\nClip
-      'jumpstart' has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'forearm.R'
-      has scale animation that will be discarded.\n\t'hand.R' has scale animation
-      that will be discarded.\n\t'longarm.L' has scale animation that will be discarded.\n\t'forearm.L'
-      has scale animation that will be discarded.\n\t'hand.L' has scale animation
-      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'calve.R'
-      has scale animation that will be discarded.\n\t'calve.L' has scale animation
-      that will be discarded.\n\nClip 'punch' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'longarm.R' has scale animation that will
-      be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
-      has scale animation that will be discarded.\n\t'longarm.L' has scale animation
-      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
-      has scale animation that will be discarded.\n\t'thigh.R' has scale animation
-      that will be discarded.\n\t'calve.L' has scale animation that will be discarded.\n\nClip
-      'sword draw' has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'forearm.R'
-      has scale animation that will be discarded.\n\t'hand.R' has scale animation
-      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
-      has scale animation that will be discarded.\n\nClip 'block' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'longarm.R' has scale animation
-      that will be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
-      has scale animation that will be discarded.\n\t'longarm.L' has scale animation
-      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
-      has scale animation that will be discarded.\n\nClip 'landing' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'longarm.R' has scale animation
-      that will be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
-      has scale animation that will be discarded.\n\t'longarm.L' has scale animation
-      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
-      has scale animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -346,6 +316,64 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sword idle
+      takeName: sword idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sword redraw
+      takeName: sword redraw
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

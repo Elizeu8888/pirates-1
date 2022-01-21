@@ -133,8 +133,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            print("ddd");
-            //state = 2;
+
 
 
         }
