@@ -9,7 +9,7 @@ public class Enemyspawner : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-    GameObject newEnemy;
+    public GameObject newEnemy;
 
     EnemyController enemyscript;
 

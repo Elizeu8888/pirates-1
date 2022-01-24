@@ -74,6 +74,8 @@ public class Playercontroller : MonoBehaviour
 
     //......................................
 
+    public Enemyspawner enemyspawn;
+    EnemyController prefabSpawn;
     public EnemyController enemyhealth;
 
     public GameObject lefthand;
@@ -401,11 +403,11 @@ public class Playercontroller : MonoBehaviour
 
 
         
-        if (fisthit.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "enemy")
         {
 
 
-
+            print("DAMAGE1111");
 
             if (damageTimer < 0)
             {
@@ -413,9 +415,9 @@ public class Playercontroller : MonoBehaviour
 
 
 
+                prefabSpawn = enemyspawn.newEnemy.GetComponent<EnemyController>();
 
-
-                enemyhealth.currentHealth = enemyhealth.currentHealth - 20;
+                prefabSpawn.currentHealth = prefabSpawn.currentHealth - 20;
                 damageTimer = 2f;
             }
             else

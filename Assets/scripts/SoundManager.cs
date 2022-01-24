@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager instance = null;
 
     public AudioClip[] clip1;
 
@@ -13,6 +14,27 @@ public class SoundManager : MonoBehaviour
     {
         audiosor = GetComponent<AudioSource>();
     }
+
+    
+
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+
+
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+
+
 
     void Update()
     {
