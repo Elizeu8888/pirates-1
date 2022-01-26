@@ -38,14 +38,21 @@ public class EnemyController : MonoBehaviour
 
         respawntime = 6;
 
-        damageTimer = 0f;
+        damageTimer = 1f;
     }
 
     //......................................
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
+        if(damageTimer <= 0)
+        {
+            currentHealth -= damage;
+        }
+        else
+        {
+            damageTimer -= Time.deltaTime;
+        }
         
-
 
 
     }

@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 81216874}
   - component: {fileID: 81216873}
   - component: {fileID: 81216872}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 150638397}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: weapon point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1668,7 +1668,7 @@ GameObject:
   - component: {fileID: 378556668}
   - component: {fileID: 378556670}
   - component: {fileID: 378556669}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: power1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6844,7 +6844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481080641}
   - component: {fileID: 481080642}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: punchHIT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6873,7 +6873,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481080640}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.92
@@ -7745,7 +7745,7 @@ GameObject:
   - component: {fileID: 698902630}
   - component: {fileID: 698902629}
   - component: {fileID: 698902631}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12888,7 +12888,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801608164}
-  m_LocalRotation: {x: 0.22319186, y: -5.8136047e-15, z: 2.4561264e-15, w: 0.97477454}
+  m_LocalRotation: {x: 0.22319184, y: 0.000000032479498, z: -0.0000000074367548, w: 0.97477454}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12906,7 +12906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840123664}
   - component: {fileID: 840123665}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: groundcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13249,7 +13249,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.20296878, y: 0.0000000084505265, z: -0.000000001740688, w: 0.9791852}
+  m_LocalRotation: {x: 0.20296878, y: -0.000000008441814, z: 0.000000001742495, w: 0.9791852}
   m_LocalPosition: {x: 35.08, y: 12.88, z: 17.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -19125,7 +19125,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339280929}
-  m_LocalRotation: {x: 0.20296876, y: 0.000000008424114, z: -0.0000000017461785, w: 0.9791852}
+  m_LocalRotation: {x: 0.20296875, y: -0.000000008424119, z: 0.0000000017461793, w: 0.9791852}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19343,7 +19343,7 @@ GameObject:
   - component: {fileID: 1356720108}
   - component: {fileID: 1356720110}
   - component: {fileID: 1356720109}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -19411,7 +19411,8 @@ MonoBehaviour:
   enemyhealth: {fileID: 3864543988047697021, guid: 66653e4f5bb0c9943a03d6d7f5f8565d, type: 3}
   lefthand: {fileID: 481080640}
   righthand: {fileID: 481080640}
-  fisthit: {fileID: 481080642}
+  hitboxes:
+  - {fileID: 481080642}
 --- !u!4 &1356720107
 Transform:
   m_ObjectHideFlags: 0
@@ -20043,7 +20044,7 @@ GameObject:
   - component: {fileID: 1458194148}
   - component: {fileID: 1458194150}
   - component: {fileID: 1458194149}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35781,7 +35782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1878674916}
   - component: {fileID: 1878674917}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: grappleshooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35962,7 +35963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1f5ce27beda63a94d94737a5a59b6620, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f5ce27beda63a94d94737a5a59b6620, type: 3}
@@ -41142,7 +41143,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026485062}
-  m_LocalRotation: {x: 0.18272823, y: -0.000000008458344, z: 0.0000000015720463, w: 0.9831635}
+  m_LocalRotation: {x: 0.18272823, y: 0.000000008458342, z: -0.0000000015720456, w: 0.9831635}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -41818,7 +41819,7 @@ GameObject:
   - component: {fileID: 2126573270}
   - component: {fileID: 2126573272}
   - component: {fileID: 2126573271}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: firefeet
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -46768,7 +46769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2358114097396546812}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: thigh.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46784,7 +46785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8384324049035501987}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46800,7 +46801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3585437867266613176}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: calve.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46816,7 +46817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6035514524382910398}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46906,7 +46907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2943748479740865069}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: elbow.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46922,7 +46923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5603163676279191365}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: handcontroller.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47056,7 +47057,7 @@ GameObject:
   - component: {fileID: 543450652090413184}
   - component: {fileID: 3469287838019927845}
   - component: {fileID: 1711813855099898863}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: swordhilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47074,7 +47075,7 @@ GameObject:
   - component: {fileID: 543450652212797992}
   - component: {fileID: 3469287838142836109}
   - component: {fileID: 1711813854415477063}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirates outfits coat 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47097,7 +47098,7 @@ GameObject:
   - component: {fileID: 543450653395519797}
   - component: {fileID: 3469287837245310608}
   - component: {fileID: 1711813855329907290}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirates outfits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47116,7 +47117,7 @@ GameObject:
   - component: {fileID: 608540089}
   - component: {fileID: 919132149547761367}
   - component: {fileID: 919132149547761368}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirateboy anim run start and running
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47273,7 +47274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8252967013218232749}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: knee.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47387,7 +47388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5795615734288876549}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: handcontroller.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47692,7 +47693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3061664327332441650}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: eyebrow.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47708,7 +47709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6819377520513668439}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: shoulder.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47754,7 +47755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3424452229527023407}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: longarm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47770,7 +47771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7874195631789648581}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47787,7 +47788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4122939327894523231}
   - component: {fileID: 741596251180073888}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47804,7 +47805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1447727244817329871}
   - component: {fileID: 5037169775600516931}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47903,7 +47904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3608883201000459671}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: knee.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47919,7 +47920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2163796771138797362}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: calve.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47935,7 +47936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1493701474500104068}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47981,7 +47982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5011349540584370199}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: elbow.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48011,7 +48012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3780959706003429777}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: legcontroller.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48073,7 +48074,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6915112946251871281}
   - component: {fileID: 2558521210337784652}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48157,7 +48158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4394238038975549677}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.R
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -48188,7 +48189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 692461491036377537}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48204,7 +48205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3946988331146148169}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: eyebrow.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48249,7 +48250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5229011420619459827}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: eyebrow.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48266,7 +48267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6682241411941562729}
   - component: {fileID: 1096819657194216046}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48395,7 +48396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6093885600903462656}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48441,7 +48442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6138629768247457423}
   - component: {fileID: 1553335717777557482}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48457,7 +48458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9126871899121648376}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: legcontroller.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48473,7 +48474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3335463359967039923}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: eyebrow.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48586,7 +48587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3731947016345777102}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: forearm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48603,7 +48604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4840630894192120662}
   - component: {fileID: 8269913073402829599}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48619,7 +48620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1200408202305267820}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.L
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -48635,7 +48636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3340068441859700178}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: thigh.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48651,7 +48652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4674739842528415287}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48696,7 +48697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5135049822333962776}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: knee.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48741,7 +48742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2935843274172001927}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: forearm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48856,6 +48857,10 @@ PrefabInstance:
     - target: {fileID: 6643228785309647063, guid: 81b5889a4ac45e944b34312c0a953cba, type: 3}
       propertyPath: m_Name
       value: swordblade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643228785309647063, guid: 81b5889a4ac45e944b34312c0a953cba, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b5889a4ac45e944b34312c0a953cba, type: 3}
@@ -48976,7 +48981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6213285141574913277}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: shoulder.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48993,7 +48998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9144837890812873564}
   - component: {fileID: 7021330059048801491}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49100,7 +49105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1526268502443222400}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: handcontroller.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49130,7 +49135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4494555116583577531}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: handcontroller.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49147,7 +49152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7580035466145273617}
   - component: {fileID: 6960912093178881763}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49259,7 +49264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8879528566974641394}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49358,7 +49363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5491749034870923677}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: knee.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49388,7 +49393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8410933884036463407}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: elbow.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49443,7 +49448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1587283755514796379}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: longarm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49474,7 +49479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913428624213489238}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hipcontroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49617,7 +49622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1327811158762868920}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49633,7 +49638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7849505639123083444}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49650,7 +49655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9038066478399152357}
   - component: {fileID: 4472505149795623321}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49682,7 +49687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7681697577475034107}
   - component: {fileID: 8927482243030537583}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49712,7 +49717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8360581024266744430}
   - component: {fileID: 5986964871662683783}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: pirate boy.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49728,7 +49733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6274053119307570818}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: elbow.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}

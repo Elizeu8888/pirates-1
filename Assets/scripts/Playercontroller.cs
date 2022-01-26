@@ -81,7 +81,10 @@ public class Playercontroller : MonoBehaviour
     public GameObject lefthand;
     public GameObject righthand;
 
-    public Collider fisthit;
+    public Collider[] hitboxes;
+
+
+
 
     void Start()
     {
@@ -116,7 +119,8 @@ public class Playercontroller : MonoBehaviour
     //......................................
     void TakeDamage(int damage)
     {
-
+        currentHealth -= damage;
+        
 
 
     }
@@ -158,6 +162,7 @@ public class Playercontroller : MonoBehaviour
 
                 lefthand.GetComponent<SphereCollider>().enabled = true;
                 righthand.GetComponent<SphereCollider>().enabled = true;
+                LaunchAttack(hitboxes[0]);
 
             }
             else
@@ -367,10 +372,6 @@ public class Playercontroller : MonoBehaviour
         }
 
 
-
-
-
-
     }
 
     void TriggerShield()
@@ -397,58 +398,50 @@ public class Playercontroller : MonoBehaviour
     }
 
 
-    void OnTriggerStay(Collider other)
+
+    public void LaunchAttack(Collider col)
     {
-        
 
-
-        
-        if (other.gameObject.tag == "enemy")
+        Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBoxes"));
+        foreach (Collider c in cols)
         {
-
-
-            print("DAMAGE1111");
-
-            if (damageTimer < 0)
+            if(c.transform.parent.parent == transform)
             {
-                print("DAMAGE");
+                continue;
+            }
+            Debug.Log(c.name);
+
+            enemyhealth = c.gameObject.GetComponent<EnemyController>();
+            int damage = 15;
+            enemyhealth.TakeDamage(damage);
 
 
+            /*switch (c.name)
+            {
+                case "enemyhit":
+                damage = 30;
+                break;
+                default:
+                Debug.Log("nopedidntwork");
+                break;
 
-                prefabSpawn = enemyspawn.newEnemy.GetComponent<EnemyController>();
-
-                prefabSpawn.currentHealth = prefabSpawn.currentHealth - 20;
-                damageTimer = 2f;
+            }
+            float timer = 1;
+            if(timer <= 0)
+            {
+                c.SendMessageUpwards("TakeDamage", damage);
+                timer = 1;
             }
             else
             {
-                damageTimer -= Time.deltaTime;
-            }
+                timer -= Time.deltaTime;
+                c.SendMessageUpwards("TakeDamage", 0);
+            }*/
+            
+
 
         }
 
-
-
-
-
-
-
-
-
-        /*if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
-        {
-            isgrounded = true;
-        }
-        else
-        {
-            isgrounded = false;
-        }*/
-
-
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
 
 
     }
@@ -457,35 +450,18 @@ public class Playercontroller : MonoBehaviour
 
 
 
+        
 
 
-    void OnTriggerExit(Collider other)
-    {
 
 
-        /*if (groundedcheck.gameObject.layer == LayerMask.NameToLayer("ground"))
-        {
-            isgrounded = false;
-        }
-        else
-        {
-            isgrounded = true;
-        }*/
 
 
-    }
 
-    /*private void HandleHookShotStart()
-    {
-        if (Input.GetKey("e"))
-        {
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit raycastHit))
-            {
-                // hit something
-                debugHitPointtransform.position = raycastHit.point;
-            }
-        }
-    }*/
+
+
+
+
 
 
 }
