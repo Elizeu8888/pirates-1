@@ -9894,6 +9894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3864543988047696994}
   - component: {fileID: 3864543988047696995}
+  - component: {fileID: 6694184499604805804}
   - component: {fileID: 3864543988047697021}
   - component: {fileID: 4961844831465770870}
   - component: {fileID: 3864543988047696992}
@@ -9940,6 +9941,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &6694184499604805804
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864543988047696998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3864543988047697021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9959,6 +9974,7 @@ MonoBehaviour:
   respawntime: 0
   plyer: {fileID: 0}
   plyscript: {fileID: 0}
+  spawn: {fileID: 0}
 --- !u!114 &4961844831465770870
 MonoBehaviour:
   m_ObjectHideFlags: 0

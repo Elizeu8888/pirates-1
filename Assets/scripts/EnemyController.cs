@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     public GameObject plyer;
 
     public Playercontroller plyscript;
+    public Transform spawn;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,8 @@ public class EnemyController : MonoBehaviour
     //......................................
     public void TakeDamage(int damage)
     {
-        if(damageTimer <= 0)
+        currentHealth -= damage;
+        if (damageTimer <= 0)
         {
             currentHealth -= damage;
         }
@@ -58,18 +60,13 @@ public class EnemyController : MonoBehaviour
     }
     //......................................
 
-    // Update is called once per frame
     void Update()
     {
         
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
             killed = true;
-
-
-
 
         }
         else
@@ -78,21 +75,19 @@ public class EnemyController : MonoBehaviour
             killed = false;
         }
 
-
-
-        /*if (killed == true)
+        if (currentHealth <= 0)
         {
+            transform.position = spawn.position;
 
-            respawntime -= Time.deltaTime;
-            if(respawntime <= 0)
-            {
-                gameObject.SetActive(true);
-                currentHealth = maxHealth;
-                respawntime = 6;
-                killed = false;
-            }
+            plyscript.xp += 20;
 
-        }*/
+            currentHealth = maxHealth;
+            healthbar.SetHealth(currentHealth);
+            killed = false;
+
+        }
+
+
 
 
     }

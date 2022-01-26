@@ -416,9 +416,9 @@ public class Playercontroller : MonoBehaviour
             enemyhealth.TakeDamage(damage);
 
 
-            /*switch (c.name)
+            switch (c.name)
             {
-                case "enemyhit":
+                case "enemyf":
                 damage = 30;
                 break;
                 default:
@@ -427,16 +427,9 @@ public class Playercontroller : MonoBehaviour
 
             }
             float timer = 1;
-            if(timer <= 0)
-            {
-                c.SendMessageUpwards("TakeDamage", damage);
-                timer = 1;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-                c.SendMessageUpwards("TakeDamage", 0);
-            }*/
+
+            c.SendMessageUpwards("TakeDamage", damage);
+
             
 
 
