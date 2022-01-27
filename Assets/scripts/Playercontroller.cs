@@ -425,7 +425,7 @@ public class Playercontroller : MonoBehaviour
             switch (c.name)
             {
                 case "enemyf":
-                damage = 30;
+                damage = 15;
                 break;
                 default:
                 Debug.Log("nopedidntwork");
@@ -436,7 +436,7 @@ public class Playercontroller : MonoBehaviour
 
             c.SendMessageUpwards("TakeDamage", damage);
 
-            
+             
 
 
         }

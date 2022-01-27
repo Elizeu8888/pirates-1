@@ -290,7 +290,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9275362, y: 1}
+    m_SensorSize: {x: 1.9092526, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12872,7 +12872,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9275362, y: 1}
+    m_SensorSize: {x: 1.9092526, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18535,7 +18535,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9275362, y: 1}
+    m_SensorSize: {x: 1.9092526, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19026,7 +19026,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9275362, y: 1}
+    m_SensorSize: {x: 1.9092526, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -40809,7 +40809,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936985336}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -40872,7 +40872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936985336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.68, y: 3.37, z: 26.06}
+  m_LocalPosition: {x: -20.08, y: 4.6, z: 26.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41139,7 +41139,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9275362, y: 1}
+    m_SensorSize: {x: 1.9092526, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -53951,7 +53951,7 @@ MonoBehaviour:
   respawntime: 0
   plyer: {fileID: 0}
   plyscript: {fileID: 0}
-  spawn: {fileID: 0}
+  spawn: {fileID: 1936985340}
 --- !u!1 &3864543987505374994
 GameObject:
   m_ObjectHideFlags: 0
@@ -55439,7 +55439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3864543987505374994}
   enemyinrange: 0
-  targetrange: 10
+  targetrange: 5
   Playermask:
     serializedVersion: 2
     m_Bits: 1024
