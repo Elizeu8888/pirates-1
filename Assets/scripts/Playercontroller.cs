@@ -42,6 +42,9 @@ public class Playercontroller : MonoBehaviour
     float turnsmoothvelocity = 0.5f;
     public float maxVelocity = 1f;
     Vector3 rbVelocity;
+    public bool sprinting;
+    public float sprintBonus;
+    public float walkspeed;
     //......................................
 
     public Healthbar healthbar;
@@ -110,6 +113,7 @@ public class Playercontroller : MonoBehaviour
         damageTimer = 0f;
 
         Cursor.lockState = CursorLockMode.Locked;
+        
 
     }
 
@@ -129,7 +133,7 @@ public class Playercontroller : MonoBehaviour
     void Update()
     {
         TriggerShield();
-
+        rbVelocity = rb.velocity;
 
         if (Input.GetKeyDown("e"))
         {
@@ -151,6 +155,26 @@ public class Playercontroller : MonoBehaviour
         if(Input.GetKeyDown("r"))
         {
             LaunchAttack(hitboxes[0]);
+        }
+        if(Input.GetKey("q"))
+        {
+            sprinting = true;
+        }
+        else
+        {
+            sprinting = false;
+        }
+        if(sprinting == true)
+        {
+            speed = sprintBonus;
+            maxVelocity = sprintBonus;
+            anim.SetBool("sprinting", true);
+        }
+        else
+        {
+            anim.SetBool("sprinting", false);
+            speed = walkspeed;
+            maxVelocity = walkspeed;
         }
 
 
@@ -235,7 +259,7 @@ public class Playercontroller : MonoBehaviour
 
 
         //......................................
-        rbVelocity = rb.velocity;
+        
 
         if (rbVelocity.sqrMagnitude > maxVelocity)// right alt and shift for||||
         {
