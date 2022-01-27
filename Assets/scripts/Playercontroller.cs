@@ -78,8 +78,8 @@ public class Playercontroller : MonoBehaviour
     EnemyController prefabSpawn;
     public EnemyController enemyhealth;
 
-    public GameObject lefthand;
-    public GameObject righthand;
+    //public GameObject lefthand;
+    //public GameObject righthand;
 
     public Collider[] hitboxes;
 
@@ -92,8 +92,8 @@ public class Playercontroller : MonoBehaviour
 
         flametimer = 0;
 
-        lefthand.GetComponent<SphereCollider>().enabled = false;
-        righthand.GetComponent<SphereCollider>().enabled = false;
+        //lefthand.GetComponent<BoxCollider>().enabled = false;
+        //righthand.GetComponent<BoxCollider>().enabled = false;
 
         currentHealth = maxHealth;
 
@@ -148,7 +148,11 @@ public class Playercontroller : MonoBehaviour
             }
         }
 
-        
+        if(Input.GetKeyDown("r"))
+        {
+            LaunchAttack(hitboxes[0]);
+        }
+
 
         if (invOUT == false)
         {
@@ -160,17 +164,17 @@ public class Playercontroller : MonoBehaviour
             {
                 punching = true;
 
-                lefthand.GetComponent<SphereCollider>().enabled = true;
-                righthand.GetComponent<SphereCollider>().enabled = true;
-                LaunchAttack(hitboxes[0]);
+                //lefthand.GetComponent<BoxCollider>().enabled = true;
+                //righthand.GetComponent<BoxCollider>().enabled = true;
 
+                
             }
             else
             {
                 punching = false;
 
-                lefthand.GetComponent<SphereCollider>().enabled = false;
-                righthand.GetComponent<SphereCollider>().enabled = false;
+                //lefthand.GetComponent<BoxCollider>().enabled = false;
+                //righthand.GetComponent<BoxCollider>().enabled = false;
 
             }
 
@@ -405,16 +409,18 @@ public class Playercontroller : MonoBehaviour
         Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBoxes"));
         foreach (Collider c in cols)
         {
-            if(c.transform.parent.parent == transform)
+
+
+            if (c.transform.parent == transform)
             {
                 continue;
             }
+
             Debug.Log(c.name);
 
-            enemyhealth = c.gameObject.GetComponent<EnemyController>();
-            int damage = 15;
-            enemyhealth.TakeDamage(damage);
-
+            //enemyhealth = c.gameObject.GetComponent<EnemyController>();
+            float damage = 0;
+            //enemyhealth.currentHealth -= 15;
 
             switch (c.name)
             {
