@@ -91,6 +91,15 @@ public class Playercontroller : MonoBehaviour
 
     void Start()
     {
+        if(PlayerPrefs.HasKey("xp") == true)
+        {
+            xp = PlayerPrefs.GetFloat("xp");
+        }
+        else
+        {
+            xp = 0f;
+        }
+
         lockUI.SetActive(false);
 
         flametimer = 0;
@@ -249,9 +258,11 @@ public class Playercontroller : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");// uses imput to find direction
         direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+
+        PlayerPrefs.SetFloat("xp", xp);
         xpscript.SetXP(xp);
 
-
+        
 
 
 
@@ -259,7 +270,7 @@ public class Playercontroller : MonoBehaviour
 
 
         //......................................
-        
+
 
         if (rbVelocity.sqrMagnitude > maxVelocity)// right alt and shift for||||
         {
@@ -296,8 +307,6 @@ public class Playercontroller : MonoBehaviour
 
         if (!isgrounded && velocity.y <= 0)
         {
-            //velocity.y += -9f * Time.deltaTime;  // here you fall faster the longer you fall
-            //rb.MovePosition(velocity * Time.deltaTime);
             velocity.y = -5f;
         }
 
@@ -359,9 +368,7 @@ public class Playercontroller : MonoBehaviour
                 resultVelocity.z = 0;
                 resultVelocity.x = 0;
                 rb.velocity = resultVelocity;
-
-
-                //rb.velocity = VectorExtensions.XZvel;//ruining the gravity FIX IT
+                
             }
         }
 
@@ -370,10 +377,6 @@ public class Playercontroller : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpheight, ForceMode.Impulse);// here u jump
         }
-
-
-
-
 
 
     }

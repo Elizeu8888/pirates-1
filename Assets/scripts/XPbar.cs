@@ -9,6 +9,8 @@ public class XPbar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+
+
     public void SetMaxXP(float xp)
     {
         slider.maxValue = xp;
@@ -20,6 +22,8 @@ public class XPbar : MonoBehaviour
 
     public void SetXP(float xp)
     {
+
+
         slider.value = xp;
         fill.color = gradient.Evaluate(slider.normalizedValue);
 
