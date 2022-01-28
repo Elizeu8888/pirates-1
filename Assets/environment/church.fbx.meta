@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: ccb8363886f449d4d9a2ad5c959376e5
 ModelImporter:
   serializedVersion: 21100
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 7282187273643339561
+    second: pirate boy|pirate boy|pirate boy|punch|pirate boy|punch
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -85,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
