@@ -22,6 +22,7 @@ public class GrappleV2 : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             StartGrapple();
+
         }
         else if (Input.GetMouseButtonUp(1))
         {
@@ -54,6 +55,8 @@ public class GrappleV2 : MonoBehaviour
             joint.massScale = 7f;
 
             lr.positionCount = 2;
+
+            transform.LookAt(hit.point);
         }
     }
 
