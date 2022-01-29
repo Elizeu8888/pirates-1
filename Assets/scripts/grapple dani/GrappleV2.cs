@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class GrappleV2 : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class GrappleV2 : MonoBehaviour
     public Transform grappleTip, camera, player;
     public float maxDistance;
     SpringJoint joint;
+    public Rig playerRig;
+    public Animator anim;
+    public GameObject grapplepoint;
 
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+
     }
 
     void Update()
@@ -23,10 +28,14 @@ public class GrappleV2 : MonoBehaviour
         {
             StartGrapple();
 
+
         }
         else if (Input.GetMouseButtonUp(1))
         {
             StopGrapple();
+            playerRig.weight = 0;
+            anim.SetLayerWeight(3, 0);
+
         }
     }
 
@@ -48,16 +57,24 @@ public class GrappleV2 : MonoBehaviour
             float distancefrompoint = Vector3.Distance(player.position, grapplePoint);
 
             joint.maxDistance = distancefrompoint * 0.4f;
-            joint.minDistance = distancefrompoint * 0.15f;
+            joint.minDistance = distancefrompoint * 0.3f;
 
-            joint.spring = 12f;
-            joint.damper = 10f;
-            joint.massScale = 7f;
+            joint.spring = 5f;
+            joint.damper = 1f;
+            joint.massScale = 10f;
 
             lr.positionCount = 2;
 
-            transform.LookAt(hit.point);
+            //transform.LookAt(hit.point);
+
+            playerRig.weight = 1;
+            anim.SetLayerWeight(3, 1);
         }
+        else
+        {
+
+        }
+        grapplepoint.transform.position = hit.point;
     }
 
     void DrawRope()
