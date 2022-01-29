@@ -45,6 +45,7 @@ public class Playercontroller : MonoBehaviour
     public bool sprinting;
     public float sprintBonus;
     public float walkspeed;
+    public float airVelocity = 750;
     //......................................
 
     public Healthbar healthbar;
@@ -282,6 +283,7 @@ public class Playercontroller : MonoBehaviour
 
         }
 
+
         //......................................
 
         Triggerfire();
@@ -363,13 +365,22 @@ public class Playercontroller : MonoBehaviour
             }
             else
             {
+                if(isgrounded==true)
+                {
+                    Vector3 resultVelocity = rb.velocity;
+                    resultVelocity.z = 0;
+                    resultVelocity.x = 0;
+                    rb.velocity = resultVelocity;
+                }
 
-                Vector3 resultVelocity = rb.velocity;
-                resultVelocity.z = 0;
-                resultVelocity.x = 0;
-                rb.velocity = resultVelocity;
                 
             }
+        }
+
+        if(isgrounded == false)
+        {
+            //maxVelocity = airVelocity;
+            
         }
 
 
