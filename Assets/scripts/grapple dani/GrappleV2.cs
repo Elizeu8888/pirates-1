@@ -60,7 +60,7 @@ public class GrappleV2 : MonoBehaviour
             joint.minDistance = distancefrompoint * 0.3f;
 
             joint.spring = 5f;
-            joint.damper = 1f;
+            joint.damper = 3f;
             joint.massScale = 10f;
 
             lr.positionCount = 2;

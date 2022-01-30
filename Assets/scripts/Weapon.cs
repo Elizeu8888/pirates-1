@@ -13,6 +13,8 @@ public class Weapon : MonoBehaviour
 
     public GameObject sword;
 
+    public Playercontroller plyscript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +29,14 @@ public class Weapon : MonoBehaviour
     {
 
 
-        if (Input.GetKey("f") && weaponout == false)
+        if (Input.GetKeyDown("f") && weaponout == false)
         {
             anim.SetLayerWeight(2, 1);
             anim.SetBool("Sworddraw", true);
             
             print("ddd");
 
-
+            plyscript.weaponDrawn = true;
 
 
             weaponout = true;
@@ -48,9 +50,9 @@ public class Weapon : MonoBehaviour
 
 
 
-        if (Input.GetKey("g") && weaponout == true)
+        if (Input.GetKeyDown("g") && weaponout == true)
         {
-
+            plyscript.weaponDrawn = false;
             print("ddd");
             anim.SetBool("Sworddraw", false);
 
@@ -87,6 +89,9 @@ public class Weapon : MonoBehaviour
     }
 
 
-
+    public void Damage()
+    {
+        plyscript.AttackWeapon();
+    }
 
 }

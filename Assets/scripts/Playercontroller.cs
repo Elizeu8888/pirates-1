@@ -87,6 +87,8 @@ public class Playercontroller : MonoBehaviour
 
     public Collider[] hitboxes;
 
+    public bool weaponDrawn;
+
 
 
 
@@ -191,10 +193,20 @@ public class Playercontroller : MonoBehaviour
         if (invOUT == false)
         {
 
+            if (Input.GetMouseButtonDown(0) && weaponDrawn == true)
+            {
+                anim.SetBool("swordAttack", true);
+                
+            }
+            else
+            {
+                anim.SetBool("swordAttack", false);
+            }
 
 
 
-            if (Input.GetMouseButton(0))
+
+            if (Input.GetMouseButton(0) && weaponDrawn == false)
             {
                 punching = true;
 
@@ -483,11 +495,15 @@ public class Playercontroller : MonoBehaviour
 
     }
 
+    public void AttackWeapon()
+    {
+        LaunchAttack(hitboxes[1]);
+    }
 
 
 
 
-        
+
 
 
 

@@ -10,6 +10,8 @@ public class EventPass : MonoBehaviour
     public AudioClip stepL;
     public AudioClip stepR;
 
+    public Weapon weaponscript;
+
     //public SoundManager soundscript;
 
     public void Use()
@@ -21,6 +23,11 @@ public class EventPass : MonoBehaviour
     public void AltUse()
     {
         altUse.Invoke();
+    }
+
+    public void Damage()
+    {
+        weaponscript.Damage();
     }
 
 
