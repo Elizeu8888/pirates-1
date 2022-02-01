@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class XpNumber : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class XpNumber : MonoBehaviour
 
     Playercontroller playerscript;
 
-    public Text textObject;
+    public TextMeshProUGUI textObject;
 
     // Start is called before the first frame update
     void Start()
