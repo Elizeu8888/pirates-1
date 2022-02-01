@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.754717, g: 0.4344933, b: 0.12459949, a: 0.8}
   m_FogMode: 2
-  m_FogDensity: 0.005
+  m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.5424528, g: 1, b: 0.8797817, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3906676, g: 0.4728514, b: 0.5674772, a: 1}
+  m_IndirectSpecularColor: {r: 0.39066887, g: 0.4728517, b: 0.56747687, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -290,7 +290,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9238477, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13350,7 +13350,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9238477, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13366,7 +13366,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801608164}
-  m_LocalRotation: {x: 0.043739926, y: 0.00000001591443, z: -6.967628e-10, w: 0.999043}
+  m_LocalRotation: {x: 0.043739915, y: 2.0058841e-16, z: 3.4321434e-17, w: 0.999043}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19358,7 +19358,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9238477, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -20032,7 +20032,7 @@ MonoBehaviour:
   grappleTip: {fileID: 1881782763}
   camera: {fileID: 963194228}
   player: {fileID: 1356720107}
-  maxDistance: 155
+  maxDistance: 75
   playerRig: {fileID: 595339815}
   anim: {fileID: 608540089}
   grapplepoint: {fileID: 1245374089}
@@ -20089,7 +20089,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9238477, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -20376,8 +20376,8 @@ MonoBehaviour:
   turnsmoothing: 0.1
   maxVelocity: 150
   sprinting: 0
-  sprintBonus: 300
-  walkspeed: 150
+  sprintBonus: 35
+  walkspeed: 25
   airVelocity: 750
   healthbar: {fileID: 1541590139}
   maxHealth: 100
@@ -42367,7 +42367,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9238477, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
