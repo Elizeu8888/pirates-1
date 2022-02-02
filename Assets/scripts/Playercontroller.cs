@@ -399,6 +399,7 @@ public class Playercontroller : MonoBehaviour
         if (Input.GetKey("space") && isgrounded)
         {
             rb.AddForce(transform.up * jumpheight, ForceMode.Impulse);// here u jump
+            isgrounded = false;
         }
 
 
@@ -466,15 +467,15 @@ public class Playercontroller : MonoBehaviour
                 continue;
             }
 
-            Debug.Log(c.name);
+            Debug.Log(c.tag);
 
             //enemyhealth = c.gameObject.GetComponent<EnemyController>();
             float damage = 0;
             //enemyhealth.currentHealth -= 15;
 
-            switch (c.name)
+            switch (c.tag)
             {
-                case "enemyf":
+                case "enemy":
                 damage = 15;
                 break;
                 default:
