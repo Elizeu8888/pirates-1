@@ -372,8 +372,8 @@ public class Playercontroller : MonoBehaviour
 
 
 
-                Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward * Time.deltaTime;// here is the movement
-                rb.AddForce(movedir.normalized * speed , ForceMode.Impulse);
+                Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;// here is the movement
+                rb.AddForce(movedir.normalized * speed * Time.deltaTime, ForceMode.Impulse);
             }
             else
             {
