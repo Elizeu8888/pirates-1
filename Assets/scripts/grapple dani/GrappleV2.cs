@@ -12,7 +12,7 @@ public class GrappleV2 : MonoBehaviour
     public float maxDistance;
     SpringJoint joint;
     public Rig playerRig;
-    public Animator anim;
+    public Animator anim,hitanim;
     public GameObject grapplepoint;
 
     void Start()
@@ -64,11 +64,12 @@ public class GrappleV2 : MonoBehaviour
             joint.massScale = 10f;
 
             lr.positionCount = 2;
-
+            hitanim.SetTrigger("hit");
             //transform.LookAt(hit.point);
 
             playerRig.weight = 1;
             anim.SetLayerWeight(3, 1);
+
         }
         else
         {

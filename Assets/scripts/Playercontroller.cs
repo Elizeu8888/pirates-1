@@ -75,6 +75,7 @@ public class Playercontroller : MonoBehaviour
     public bool isgrounded;
     Vector3 velocity;
     public Animator anim;
+    public Animator hitanim;
 
     //......................................
 
@@ -144,6 +145,7 @@ public class Playercontroller : MonoBehaviour
 
     void Update()
     {
+        //hitanim.SetBool("hit", false);
         TriggerShield();
         rbVelocity = rb.velocity;
 
@@ -477,6 +479,7 @@ public class Playercontroller : MonoBehaviour
             {
                 case "enemy":
                 damage = 15;
+                hitanim.SetTrigger("hit");
                 break;
                 default:
                 Debug.Log("nopedidntwork");
