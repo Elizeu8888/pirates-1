@@ -10,7 +10,7 @@ public class Playercontroller : MonoBehaviour
 
 
     public float shieldtimer;
-    public ParticleSystem shield;
+    public ParticleSystem shield, lightning;
     public GameObject shieldrune;
 
     public GameObject inventory;
@@ -20,7 +20,7 @@ public class Playercontroller : MonoBehaviour
     public GameObject lockUI;
     public bool locked;
 
-    public bool isdead;
+    private bool isdead;
 
     //............................
 
@@ -56,10 +56,7 @@ public class Playercontroller : MonoBehaviour
     private float damageTimer;
     //......................................
 
-    GameObject ground;
-
     Grapple grappleScript;
-
     //public float gravity = -9.81f;
     public float jumpheight = 5f;// for jumping
 
@@ -68,19 +65,16 @@ public class Playercontroller : MonoBehaviour
     public Transform groundcheck;
     public float grounddistance = 0.4f;// for is grounded
     public LayerMask groundmask;
-    public Collider groundedcheck;
 
     //......................................
 
     public bool isgrounded;
     Vector3 velocity;
-    public Animator anim;
-    public Animator hitanim;
+    public Animator anim,hitanim;
+
 
     //......................................
 
-    public Enemyspawner enemyspawn;
-    EnemyController prefabSpawn;
     public EnemyController enemyhealth;
 
     //public GameObject lefthand;
@@ -118,8 +112,6 @@ public class Playercontroller : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
 
         xpscript.SetMaxXP(maxXP);
-
-        ground = GameObject.FindGameObjectWithTag("ground");
 
         anim.SetBool("weapondrawn", false);
 
@@ -168,7 +160,7 @@ public class Playercontroller : MonoBehaviour
 
         if(Input.GetKeyDown("r"))
         {
-            LaunchAttack(hitboxes[0]);
+            LaunchAttack(hitboxes[0], 100);
         }
         if(Input.GetKey("q"))
         {
@@ -458,7 +450,7 @@ public class Playercontroller : MonoBehaviour
 
 
 
-    public void LaunchAttack(Collider col)
+    public void LaunchAttack(Collider col, float damage)
     {
 
         Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBoxes"));
@@ -474,13 +466,12 @@ public class Playercontroller : MonoBehaviour
             Debug.Log(c.tag);
 
             //enemyhealth = c.gameObject.GetComponent<EnemyController>();
-            float damage = 0;
+            
             //enemyhealth.currentHealth -= 15;
 
             switch (c.tag)
             {
-                case "enemy":
-                damage = 15;
+                case "enemy":                
                 hitanim.SetTrigger("hit");
                 break;
                 default:
@@ -503,11 +494,16 @@ public class Playercontroller : MonoBehaviour
 
     public void AttackWeapon()
     {
-        LaunchAttack(hitboxes[1]);
+        LaunchAttack(hitboxes[1], 15);
     }
 
 
+    public void Lightning()
+    {
+        LaunchAttack(hitboxes[2],2);
+        lightning.Play();
 
+    }
 
 
 
