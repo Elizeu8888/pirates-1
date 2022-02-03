@@ -413,18 +413,20 @@ public class Playercontroller : MonoBehaviour
         if (flametimer > 0)
         {
             flameparticle.SetActive(true);
+            anim.SetLayerWeight(4, 1);
 
             flametimer -= Time.deltaTime;
 
         }
         else
         {
+            anim.SetLayerWeight(4, 0);
             flameparticle.SetActive(false);
         }
 
         if (Input.GetKey("i"))
         {
-            flametimer = 6;
+            flametimer = 10;
 
         }
 

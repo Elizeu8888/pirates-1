@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: shield
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/controller
+    m_Weight: 0
+  - m_Path: Armature/controller/handcontroller.L
+    m_Weight: 0
+  - m_Path: Armature/controller/handcontroller.L/handcontroller.L_end
+    m_Weight: 0
+  - m_Path: Armature/controller/handcontroller.R
+    m_Weight: 0
+  - m_Path: Armature/controller/handcontroller.R/handcontroller.R_end
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/neck
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/neck/head
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/neck/head/eyebrow.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/neck/head/eyebrow.L/eyebrow.L_end
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/neck/head/eyebrow.R
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/neck/head/eyebrow.R/eyebrow.R_end
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.L/elbow.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.L/elbow.L/elbow.L_end
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.L/longarm.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.L/longarm.L/forearm.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.L/longarm.L/forearm.L/hand.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.L/longarm.L/forearm.L/hand.L/hand.L_end
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.R
+    m_Weight: 1
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.R/elbow.R
+    m_Weight: 1
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.R/elbow.R/elbow.R_end
+    m_Weight: 1
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.R/longarm.R
+    m_Weight: 1
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.R/longarm.R/forearm.R
+    m_Weight: 1
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.R/longarm.R/forearm.R/hand.R
+    m_Weight: 1
+  - m_Path: Armature/controller/hipcontroller/hip/chest/shoulder.R/longarm.R/forearm.R/hand.R/hand.R_end
+    m_Weight: 1
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.L/calve.L
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.L/calve.L/calve.L.001
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.L/calve.L/calve.L.001/calve.L.001_end
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.R
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.R/calve.R
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.R/calve.R/calve.R.001
+    m_Weight: 0
+  - m_Path: Armature/controller/hipcontroller/hip/thigh.R/calve.R/calve.R.001/calve.R.001_end
+    m_Weight: 0
+  - m_Path: Armature/controller/legcontroller.L
+    m_Weight: 0
+  - m_Path: Armature/controller/legcontroller.L/knee.L
+    m_Weight: 0
+  - m_Path: Armature/controller/legcontroller.L/knee.L/knee.L_end
+    m_Weight: 0
+  - m_Path: Armature/controller/legcontroller.R
+    m_Weight: 0
+  - m_Path: Armature/controller/legcontroller.R/knee.R
+    m_Weight: 0
+  - m_Path: Armature/controller/legcontroller.R/knee.R/knee.R_end
+    m_Weight: 0
+  - m_Path: pirate boy
+    m_Weight: 0
+  - m_Path: pirate boy.001
+    m_Weight: 0
+  - m_Path: pirate boy.002
+    m_Weight: 0
+  - m_Path: pirate boy.003
+    m_Weight: 0
+  - m_Path: pirate boy.004
+    m_Weight: 0
+  - m_Path: pirate boy.005
+    m_Weight: 0
+  - m_Path: pirate boy.006
+    m_Weight: 0
+  - m_Path: pirate boy.007
+    m_Weight: 0
+  - m_Path: pirate boy.008
+    m_Weight: 0
+  - m_Path: pirate boy.009
+    m_Weight: 0
