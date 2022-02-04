@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3864543988047696998}
   enemyinrange: 0
-  targetrange: 10
+  targetrange: 35
   Playermask:
     serializedVersion: 2
     m_Bits: 512

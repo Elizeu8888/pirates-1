@@ -6439,7 +6439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2159320047428510513}
   enemyinrange: 0
-  targetrange: 40
+  targetrange: 100
   Playermask:
     serializedVersion: 2
     m_Bits: 512
