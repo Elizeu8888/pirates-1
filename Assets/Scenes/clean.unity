@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.47886413, g: 0.8001933, b: 0.89938086, a: 1}
+  m_IndirectSpecularColor: {r: 0.47884, g: 0.8001845, b: 0.90072787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12683,7 +12683,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6243386, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12699,7 +12699,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801608164}
-  m_LocalRotation: {x: 0.033163972, y: 0.000000017282023, z: -5.7345595e-10, w: 0.99944997}
+  m_LocalRotation: {x: 0.033163972, y: -0.000000017282023, z: 5.7345595e-10, w: 0.99944997}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13111,7 +13111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.0124708535, y: 0.000000017344188, z: -2.1619352e-10, w: 0.9999223}
+  m_LocalRotation: {x: 0.0124708535, y: -0.000000017346288, z: 2.1616789e-10, w: 0.9999223}
   m_LocalPosition: {x: 37.08, y: 7.0499997, z: 21.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13771,7 +13771,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6243386, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14516,7 +14516,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6243386, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14532,7 +14532,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339280929}
-  m_LocalRotation: {x: 0.0124708535, y: 0.000000017338932, z: -2.162481e-10, w: 0.9999223}
+  m_LocalRotation: {x: 0.0124708535, y: -0.000000017338937, z: 2.1624817e-10, w: 0.9999223}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14673,8 +14673,8 @@ MonoBehaviour:
   turnsmoothing: 0.1
   maxVelocity: 25
   sprinting: 0
-  sprintBonus: 250
-  walkspeed: 155
+  sprintBonus: 400
+  walkspeed: 200
   airVelocity: 400
   healthbar: {fileID: 1541590139}
   maxHealth: 100
@@ -21808,7 +21808,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6243386, y: 1}
+    m_SensorSize: {x: 1.9298561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -21824,7 +21824,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026485062}
-  m_LocalRotation: {x: -0.008156883, y: -3.3799763e-10, z: -2.7570992e-12, w: 0.99996674}
+  m_LocalRotation: {x: -0.008156882, y: 0.0000000011140043, z: 9.0871035e-12, w: 0.99996674}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -28336,6 +28336,18 @@ PrefabInstance:
       propertyPath: lightningHit
       value: 
       objectReference: {fileID: 400989529}
+    - target: {fileID: 1505227654852008204, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46897ea842717a8469654d3be9672451, type: 2}
+    - target: {fileID: 1505227654852008204, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: baacb8b4285ef0d4ab41272fc9df7616, type: 2}
+    - target: {fileID: 2723143430738420475, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7d2a6644fff3e041848c38d525e0876, type: 2}
     - target: {fileID: 2752626254305773123, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
       propertyPath: m_Name
       value: pirateboy anim run start and running
@@ -28386,6 +28398,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3276538406393289977, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410069184032619118, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: baacb8b4285ef0d4ab41272fc9df7616, type: 2}
+    - target: {fileID: 6356409970118419338, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: baacb8b4285ef0d4ab41272fc9df7616, type: 2}
+    - target: {fileID: 7092743127204868758, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841802012386508093, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936354030104925978, guid: 4d60de0968221f64f9d973a04e4c0c2b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
