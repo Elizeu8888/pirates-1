@@ -15,6 +15,7 @@ public class GrappleV2 : MonoBehaviour
     public Animator anim,hitanim;
     public GameObject grapplepoint;
     public Playercontroller plyscript;
+    public Rigidbody rb;
 
     void Start()
     {
@@ -62,7 +63,8 @@ public class GrappleV2 : MonoBehaviour
 
             joint.spring = 5f;
             joint.damper = 3f;
-            joint.massScale = 10f;
+            joint.massScale = 15f;
+            rb.angularDrag = 0f;
 
             lr.positionCount = 2;
             hitanim.SetTrigger("hit");
