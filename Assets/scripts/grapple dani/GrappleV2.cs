@@ -14,6 +14,7 @@ public class GrappleV2 : MonoBehaviour
     public Rig playerRig;
     public Animator anim,hitanim;
     public GameObject grapplepoint;
+    public Playercontroller plyscript;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class GrappleV2 : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(1) && plyscript.locked == false)
         {
             StartGrapple();
 

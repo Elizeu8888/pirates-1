@@ -106,14 +106,14 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        print("ontrigger=" + other.gameObject.tag);
+        
 
 
 
         if (other.gameObject.tag == "Player")
         {
 
-            print("yeeeee");
+            
             
             if (damageTimer < 0)
             {

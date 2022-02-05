@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     public Transform hand;
     public Transform back;
 
-    bool weaponout;
+    public bool weaponout;
 
     public Animator anim;
 

@@ -46,6 +46,7 @@ public class Playercontroller : MonoBehaviour
     public float sprintBonus;
     public float walkspeed;
     public float airVelocity = 750;
+    public float lockedSpeed;
     //......................................
 
     public Healthbar healthbar;
@@ -83,7 +84,8 @@ public class Playercontroller : MonoBehaviour
     public Collider[] hitboxes;
 
     public bool weaponDrawn;
-
+    public Weapon weaponscript;
+    bool shieldOut = false;
 
 
 
@@ -162,7 +164,7 @@ public class Playercontroller : MonoBehaviour
         {
             LaunchAttack(hitboxes[0], 100);
         }
-        if(Input.GetKey("q"))
+        if(Input.GetKey("q") && locked == false)
         {
             sprinting = true;
         }
@@ -333,7 +335,23 @@ public class Playercontroller : MonoBehaviour
             anim.SetBool("grounded", true);
         }
 
-
+        if(locked == true)
+        {
+            anim.SetLayerWeight(5, 1);
+            anim.SetLayerWeight(2, 1);
+            anim.SetBool("Sworddraw", true);
+            weaponscript.weaponout = true;
+            weaponDrawn = true;
+            speed = lockedSpeed;
+            shieldOut = true;
+        }
+        else
+        {
+            
+            anim.SetLayerWeight(5, 0);
+        }
+        anim.SetFloat("Z", direction.z);
+        anim.SetFloat("X", direction.x);
         //......................................
 
     }
@@ -402,12 +420,16 @@ public class Playercontroller : MonoBehaviour
     void Triggerfire()
     {
 
-        if (flametimer > 0)
+        
+
+
+
+        if (shieldOut == true)
         {
             flameparticle.SetActive(true);
             anim.SetLayerWeight(4, 1);
 
-            flametimer -= Time.deltaTime;
+            
 
         }
         else
@@ -416,10 +438,9 @@ public class Playercontroller : MonoBehaviour
             flameparticle.SetActive(false);
         }
 
-        if (Input.GetKey("i"))
+        if (Input.GetKeyDown("i"))
         {
-            flametimer = 10;
-
+            shieldOut = !shieldOut;
         }
 
 
