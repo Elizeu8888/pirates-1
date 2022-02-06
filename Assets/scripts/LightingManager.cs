@@ -18,12 +18,12 @@ public class LightingManager : MonoBehaviour
         Collider[] biome = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Player"));
         foreach (Collider c in biome)
         {
-            /*
+            
             if(col == desertArea)
             {
                 RenderSettings.fogColor = desertfog;
-                RenderSettings.skybox = desertSkyBox;
-                RenderSettings.fogDensity = 0.005f;
+                //RenderSettings.skybox = desertSkyBox;
+                //RenderSettings.fogDensity = 0.005f;
                 //desertPPV.active = true;
                 
             }
@@ -31,8 +31,8 @@ public class LightingManager : MonoBehaviour
             if (col == forrestArea)
             {
                 RenderSettings.fogColor = forrestfog;
-                RenderSettings.skybox = forrestSkyBox;
-                RenderSettings.fogDensity = 0.003f;
+                //RenderSettings.skybox = forrestSkyBox;
+                //RenderSettings.fogDensity = 0.003f;
                 //desertPPV.active = false;
 
             }
@@ -40,7 +40,7 @@ public class LightingManager : MonoBehaviour
             if (c.gameObject == player)
             {
                 
-            }*/
+            }
 
         }
 
